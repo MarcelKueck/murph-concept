@@ -12,5 +12,201 @@
     "sentAt": "2025-03-20T14:42:00.000Z",
     "isFromPatient": false,
     "consultationId": "c1"
+  },
+  {
+    "id": "m3",
+    "content": "Great, thank you. I'm particularly concerned about my cholesterol and glucose levels.",
+    "sentAt": "2025-03-20T14:50:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c1"
+  },
+  {
+    "id": "m4",
+    "content": "I understand your concern. I'll make sure to explain both of those in detail during our video call. Is there anything else you'd like to focus on?",
+    "sentAt": "2025-03-20T15:05:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c1"
+  },
+  {
+    "id": "m5",
+    "content": "Hi, I just started taking this new medication and I'm experiencing some side effects like dizziness. Is this normal?",
+    "sentAt": "2025-03-21T09:20:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c2"
+  },
+  {
+    "id": "m6",
+    "content": "Hello, I have a question about my chest X-ray report. The doctor mentioned something about \"slight opacity\" but didn't explain what it means.",
+    "sentAt": "2025-03-22T14:25:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c3"
+  },
+  {
+    "id": "m7",
+    "content": "Hi there. I've reviewed your X-ray report and I'd be happy to explain what \"slight opacity\" means during our scheduled video call. It's a common finding that could have several interpretations.",
+    "sentAt": "2025-03-22T15:10:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c3"
+  },
+  {
+    "id": "m8",
+    "content": "Thank you, that would be great. Is there anything I should prepare before our call?",
+    "sentAt": "2025-03-22T16:45:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c3"
+  },
+  {
+    "id": "m9",
+    "content": "Just have your X-ray report handy, and if you have any previous imaging results for comparison, those would be helpful too. Also, prepare any specific questions you might have.",
+    "sentAt": "2025-03-22T17:20:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c3"
+  },
+  {
+    "id": "m10",
+    "content": "I need to understand how this heart medication works. My doctor prescribed Ramipril but didn't explain much about it.",
+    "sentAt": "2025-03-18T09:40:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c4"
+  },
+  {
+    "id": "m11",
+    "content": "Hello! I'd be happy to help you understand Ramipril. It's an ACE inhibitor that helps relax blood vessels to lower blood pressure. We can discuss how it works, how to take it properly, and any potential side effects during our call.",
+    "sentAt": "2025-03-18T10:15:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c4"
+  },
+  {
+    "id": "m12",
+    "content": "That would be very helpful. Should I take it with food or on an empty stomach?",
+    "sentAt": "2025-03-18T11:30:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c4"
+  },
+  {
+    "id": "m13",
+    "content": "I'm really confused about my thyroid test results. My doctor said they're \"borderline\" but I don't know what that means for my health.",
+    "sentAt": "2025-03-15T11:20:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c5"
+  },
+  {
+    "id": "m14",
+    "content": "I'm trying to understand my MRI knee results. There are terms like \"meniscal tear\" and \"partial ACL sprain\" that I don't understand.",
+    "sentAt": "2025-03-08T10:15:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c6"
+  },
+  {
+    "id": "m15",
+    "content": "Can you help me understand my allergy test results? I tested positive for several things but don't know what changes I need to make.",
+    "sentAt": "2025-03-20T13:40:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c7"
+  },
+  {
+    "id": "m16",
+    "content": "Hi! I'd be happy to explain your allergy test results. I've reviewed the document you uploaded, and I can see several environmental and food allergies listed. Let's discuss these in detail during our scheduled call.",
+    "sentAt": "2025-03-20T14:25:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c7"
+  },
+  {
+    "id": "m17",
+    "content": "My test shows I'm low in Vitamin D and B12. What does this mean and how should I address it?",
+    "sentAt": "2025-03-21T14:50:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c8"
+  },
+  {
+    "id": "m18",
+    "content": "I've attached photos of a rash I've had for two weeks. It's not painful but it's spreading and I'm wondering if I should see a dermatologist.",
+    "sentAt": "2025-03-19T09:10:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c9"
+  },
+  {
+    "id": "m19",
+    "content": "I've reviewed the photos of your skin condition and would like to discuss this in our upcoming video consultation. While I can't provide a diagnosis, I can help you understand when a dermatology referral might be appropriate.",
+    "sentAt": "2025-03-19T10:40:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c9"
+  },
+  {
+    "id": "m20",
+    "content": "My cholesterol panel shows high LDL and triglycerides. What lifestyle changes should I consider?",
+    "sentAt": "2025-03-17T15:30:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c10"
+  },
+  {
+    "id": "m21",
+    "content": "I understand your concern about the cholesterol results. During our call, we can discuss dietary modifications, exercise recommendations, and other lifestyle factors that can help improve these values.",
+    "sentAt": "2025-03-17T16:15:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c10"
+  },
+  {
+    "id": "m22",
+    "content": "I've had a persistent cough for three weeks now. It's mostly dry and worse at night. Should I be concerned?",
+    "sentAt": "2025-03-14T10:20:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c11"
+  },
+  {
+    "id": "m23",
+    "content": "Thanks for explaining all this to me during our call. The information about post-viral coughs was very helpful. I'll try the humidifier as you suggested.",
+    "sentAt": "2025-03-15T15:10:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c11"
+  },
+  {
+    "id": "m24",
+    "content": "I'm glad the information was helpful! Remember to stay hydrated and rest as needed. If the cough persists beyond 6 weeks or you develop new symptoms, please consider seeing your doctor.",
+    "sentAt": "2025-03-15T15:25:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c11"
+  },
+  {
+    "id": "m25",
+    "content": "I've been having recurring headaches, mostly in the afternoon. They're focused around my temples and forehead.",
+    "sentAt": "2025-03-21T16:15:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c12"
+  },
+  {
+    "id": "m26",
+    "content": "I'd like advice on starting an exercise routine after being inactive for about 2 years. I'm 42 and used to jog regularly.",
+    "sentAt": "2025-03-22T10:05:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c13"
+  },
+  {
+    "id": "m27",
+    "content": "I've been experiencing stiffness and pain in my finger joints, especially in the morning. It improves as the day goes on. What could this be?",
+    "sentAt": "2025-03-20T11:45:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c14"
+  },
+  {
+    "id": "m28",
+    "content": "Thank you for describing your symptoms. Morning stiffness that improves with activity can be associated with several conditions. I've scheduled our video call where we can discuss possible causes and when to seek medical evaluation.",
+    "sentAt": "2025-03-20T13:20:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c14"
+  },
+  {
+    "id": "m29",
+    "content": "I'm taking amoxicillin for a sinus infection. Are there any foods I should avoid? Also, does it interact with birth control?",
+    "sentAt": "2025-03-18T14:10:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c15"
+  },
+  {
+    "id": "m30",
+    "content": "I've been struggling with insomnia lately. I fall asleep fine but wake up around 3 AM and can't get back to sleep. Any non-medication strategies?",
+    "sentAt": "2025-03-19T20:05:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c16"
   }
 ]

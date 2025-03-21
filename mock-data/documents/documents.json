@@ -14,5 +14,109 @@
     "url": "/mock-documents/medication_info_p2.pdf",
     "uploadedAt": "2025-03-21T09:15:00.000Z",
     "userId": "p2"
+  },
+  {
+    "id": "d3",
+    "name": "Chest X-Ray Report",
+    "type": "imaging",
+    "url": "/mock-documents/xray_p3_feb.pdf",
+    "uploadedAt": "2025-02-28T14:20:00.000Z",
+    "userId": "p3"
+  },
+  {
+    "id": "d4",
+    "name": "Cardiology Consultation Notes",
+    "type": "specialist_report",
+    "url": "/mock-documents/cardio_report_p4.pdf",
+    "uploadedAt": "2025-03-15T10:30:00.000Z",
+    "userId": "p4"
+  },
+  {
+    "id": "d5",
+    "name": "Thyroid Function Test Results",
+    "type": "lab_result",
+    "url": "/mock-documents/thyroid_test_p5.pdf",
+    "uploadedAt": "2025-03-10T15:45:00.000Z",
+    "userId": "p5"
+  },
+  {
+    "id": "d6",
+    "name": "MRI Knee Report",
+    "type": "imaging",
+    "url": "/mock-documents/mri_knee_p6.pdf",
+    "uploadedAt": "2025-03-05T09:15:00.000Z",
+    "userId": "p6"
+  },
+  {
+    "id": "d7",
+    "name": "Allergy Test Results",
+    "type": "lab_result",
+    "url": "/mock-documents/allergy_test_p7.pdf",
+    "uploadedAt": "2025-03-17T11:20:00.000Z",
+    "userId": "p7"
+  },
+  {
+    "id": "d8",
+    "name": "Vitamin D and Mineral Panel",
+    "type": "lab_result",
+    "url": "/mock-documents/vitamin_panel_p8.pdf",
+    "uploadedAt": "2025-03-20T16:30:00.000Z",
+    "userId": "p8"
+  },
+  {
+    "id": "d9",
+    "name": "Dermatology Clinical Photography",
+    "type": "imaging",
+    "url": "/mock-documents/derm_photos_p9.pdf",
+    "uploadedAt": "2025-03-14T14:10:00.000Z",
+    "userId": "p9"
+  },
+  {
+    "id": "d10",
+    "name": "Lipid Profile Results",
+    "type": "lab_result",
+    "url": "/mock-documents/lipid_profile_p10.pdf",
+    "uploadedAt": "2025-03-12T09:45:00.000Z",
+    "userId": "p10"
+  },
+  {
+    "id": "d11",
+    "name": "Prescription - Ramipril 5mg",
+    "type": "prescription",
+    "url": "/mock-documents/prescription_p4_ramipril.pdf",
+    "uploadedAt": "2025-03-15T11:00:00.000Z",
+    "userId": "p4"
+  },
+  {
+    "id": "d12",
+    "name": "Ultrasound Thyroid Report",
+    "type": "imaging",
+    "url": "/mock-documents/ultrasound_thyroid_p5.pdf",
+    "uploadedAt": "2025-03-11T10:30:00.000Z",
+    "userId": "p5"
+  },
+  {
+    "id": "d13",
+    "name": "Physical Therapy Recommendation",
+    "type": "referral",
+    "url": "/mock-documents/physio_referral_p6.pdf",
+    "uploadedAt": "2025-03-06T14:20:00.000Z",
+    "userId": "p6"
+  },
+  {
+    "id": "d14",
+    "name": "Complete Blood Count Results",
+    "type": "lab_result",
+    "url": "/mock-documents/cbc_p1_march.pdf",
+    "uploadedAt": "2025-03-19T16:50:00.000Z",
+    "userId": "p1"
+  },
+  {
+    "id": "d15",
+    "name": "Discharge Summary - Hospital Stay",
+    "type": "hospital_report",
+    "url": "/mock-documents/discharge_p3.pdf",
+    "uploadedAt": "2025-03-01T17:15:00.000Z",
+    "userId": "p3"
   }
 ]

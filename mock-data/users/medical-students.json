@@ -18,5 +18,65 @@
     "university": "Ludwig-Maximilians-Universität München",
     "studyYear": 4,
     "specialization": "Pediatrics"
+  },
+  {
+    "id": "ms3",
+    "name": "Sophia Bauer",
+    "email": "sophia.bauer@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student3.jpg",
+    "university": "Universität Heidelberg",
+    "studyYear": 6,
+    "specialization": "Cardiology"
+  },
+  {
+    "id": "ms4",
+    "name": "Niklas Richter",
+    "email": "niklas.richter@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student4.jpg",
+    "university": "Universität Hamburg",
+    "studyYear": 3,
+    "specialization": "Neurology"
+  },
+  {
+    "id": "ms5",
+    "name": "Lena Krause",
+    "email": "lena.krause@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student5.jpg",
+    "university": "RWTH Aachen",
+    "studyYear": 5,
+    "specialization": "Dermatology"
+  },
+  {
+    "id": "ms6",
+    "name": "Tobias Wolf",
+    "email": "tobias.wolf@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student6.jpg",
+    "university": "Universität Tübingen",
+    "studyYear": 4,
+    "specialization": "Orthopedics"
+  },
+  {
+    "id": "ms7",
+    "name": "Charlotte Schuster",
+    "email": "charlotte.schuster@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student7.jpg",
+    "university": "Goethe-Universität Frankfurt",
+    "studyYear": 6,
+    "specialization": "Oncology"
+  },
+  {
+    "id": "ms8",
+    "name": "Paul Neumann",
+    "email": "paul.neumann@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student8.jpg",
+    "university": "Technische Universität München",
+    "studyYear": 3,
+    "specialization": "General Medicine"
   }
 ]

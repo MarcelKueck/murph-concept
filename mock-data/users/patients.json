@@ -16,5 +16,77 @@
     "image": "/mock-images/patients/patient2.jpg",
     "dateOfBirth": "1978-09-23",
     "gender": "male"
+  },
+  {
+    "id": "p3",
+    "name": "Anna Becker",
+    "email": "anna.becker@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient3.jpg",
+    "dateOfBirth": "1992-07-18",
+    "gender": "female"
+  },
+  {
+    "id": "p4",
+    "name": "Klaus Hoffmann",
+    "email": "klaus.hoffmann@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient4.jpg",
+    "dateOfBirth": "1965-11-30",
+    "gender": "male"
+  },
+  {
+    "id": "p5",
+    "name": "Sophie Zimmermann",
+    "email": "sophie.zimmermann@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient5.jpg",
+    "dateOfBirth": "1989-02-05",
+    "gender": "female"
+  },
+  {
+    "id": "p6",
+    "name": "Lukas Schneider",
+    "email": "lukas.schneider@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient6.jpg",
+    "dateOfBirth": "1971-06-24",
+    "gender": "male"
+  },
+  {
+    "id": "p7",
+    "name": "Hannah Meyer",
+    "email": "hannah.meyer@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient7.jpg",
+    "dateOfBirth": "1995-10-13",
+    "gender": "female"
+  },
+  {
+    "id": "p8",
+    "name": "Felix Wagner",
+    "email": "felix.wagner@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient8.jpg",
+    "dateOfBirth": "1982-03-27",
+    "gender": "male"
+  },
+  {
+    "id": "p9",
+    "name": "Emilia Koch",
+    "email": "emilia.koch@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient9.jpg",
+    "dateOfBirth": "1998-12-09",
+    "gender": "female"
+  },
+  {
+    "id": "p10",
+    "name": "Markus Schröder",
+    "email": "markus.schroeder@example.com",
+    "role": "PATIENT",
+    "image": "/mock-images/patients/patient10.jpg",
+    "dateOfBirth": "1973-08-16",
+    "gender": "male"
   }
 ]

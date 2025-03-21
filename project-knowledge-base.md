@@ -28,7 +28,7 @@
 | Project Setup             | 🟢 Complete    | Frontend Dev     | 2025-03-21   |
 | Design System             | 🟢 Complete    | UI/UX Design     | 2025-03-21   |
 | UI Component Library      | 🟠 In Progress | Frontend Dev     | 2025-03-21   |
-| Mock Data                 | 🟠 In Progress | Content & Loc    | 2025-03-21   |
+| Mock Data                 | 🟢 Complete    | Content & Loc    | 2025-03-21   |
 | Landing Page              | 🟡 Planned     | UI/UX + Frontend | YYYY-MM-DD   |
 | Authentication            | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
 | Patient Dashboard         | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
@@ -46,12 +46,16 @@ Status: 🟢 Complete | 🟠 In Progress | 🟡 Planned | 🔴 Blocked
 
 We have successfully completed the project initialization phase. The Project Manager has created a detailed project timeline with specific tasks, dependencies, and milestones. The UI/UX Design Agent has created a comprehensive design system with detailed component guidelines, color palette, typography, spacing system, and animation principles following Apple-like design principles. The Frontend Development Agent has set up the Next.js 15 project structure with TypeScript, Tailwind CSS configuration according to the design system specifications, and created the full folder structure with basic component placeholders.
 
-**Moving to MILESTONE 2: Core Building Blocks Ready**
+**MILESTONE 2: Core Building Blocks Progress**
 
-We are now working on Week 2 tasks which include:
-1. Task 2.1: Mock Data Creation (Content & Localization Agent)
-2. Task 2.2: UI Component Implementation (Frontend Development Agent)
-3. Task 2.3: Internationalization Setup (Content & Localization Agent)
+We have made significant progress on Week 2 tasks:
+1. Task 2.1: Mock Data Creation (Content & Localization Agent) ✅ - Completed on 2025-03-21
+   - Developed comprehensive mock data for 10 patients, 8 medical students, 20 consultations, 15 documents, and 30 messages
+   - Created realistic German profiles with diverse demographics and medical scenarios
+   - Ensured data consistency across all related entities
+
+2. Task 2.2: UI Component Implementation (Frontend Development Agent) - In Progress
+3. Task 2.3: Internationalization Setup (Content & Localization Agent) - Planned
 
 ## Project Structure
 
@@ -104,14 +108,14 @@ murph-website/
 │
 ├── mock-data/                    # Mock data JSON files
 │   ├── users/                    # User mock data
-│   │   ├── patients.json         # Patient user data
-│   │   └── medical-students.json # Medical student user data
+│   │   ├── patients.json         # Patient user data (10 profiles)
+│   │   └── medical-students.json # Medical student user data (8 profiles)
 │   ├── consultations/            # Consultation mock data
-│   │   └── consultations.json    # Consultation data
+│   │   └── consultations.json    # Consultation data (20 consultations)
 │   ├── documents/                # Document mock data
-│   │   └── documents.json        # Document data
+│   │   └── documents.json        # Document data (15 documents)
 │   └── messages/                 # Message mock data
-│       └── messages.json         # Message data
+│       └── messages.json         # Message data (30 messages)
 │
 ├── styles/                       # Additional styles
 ├── public/                       # Static assets
@@ -137,13 +141,13 @@ murph-website/
    - Build core UI components based on design system
    - Due: Day 9 (Priority: High)
 
-2. **Mock Data Creation** (Content & Localization Agent)
-   - Develop comprehensive mock data
-   - Due: Day 7 (Priority: High)
-
-3. **Internationalization Setup** (Content & Localization Agent)
+2. **Internationalization Setup** (Content & Localization Agent)
    - Configure internationalization for German and English
    - Due: Day 10 (Priority: Medium)
+
+3. **Landing Page Design** (UI/UX Design Agent)
+   - Design detailed landing page layout
+   - Due: Day 12 (Priority: Medium)
 
 ## Weekly Review Schedule
 
