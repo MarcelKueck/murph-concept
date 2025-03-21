@@ -1,0 +1,26 @@
+[
+  {
+    "id": "c1",
+    "type": "labResult",
+    "primaryConcern": "Understanding blood test results",
+    "description": "I received blood test results but don't understand what the values mean",
+    "status": "ASSIGNED",
+    "communicationChannel": "video",
+    "scheduledFor": "2025-03-25T14:30:00.000Z",
+    "createdAt": "2025-03-20T10:15:00.000Z",
+    "patientId": "p1",
+    "medicalStudentId": "ms1",
+    "documents": ["d1"]
+  },
+  {
+    "id": "c2",
+    "type": "medication",
+    "primaryConcern": "Understanding medication side effects",
+    "description": "I started a new medication and want to understand the potential side effects",
+    "status": "REQUESTED",
+    "communicationChannel": "text",
+    "createdAt": "2025-03-21T09:20:00.000Z",
+    "patientId": "p2",
+    "documents": []
+  }
+]

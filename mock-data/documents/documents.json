@@ -1,0 +1,18 @@
+[
+  {
+    "id": "d1",
+    "name": "Blood Test Results March 2025",
+    "type": "lab_result",
+    "url": "/mock-documents/lab_result_p1_march.pdf",
+    "uploadedAt": "2025-03-19T16:45:00.000Z",
+    "userId": "p1"
+  },
+  {
+    "id": "d2",
+    "name": "Medication Information Sheet",
+    "type": "medication_info",
+    "url": "/mock-documents/medication_info_p2.pdf",
+    "uploadedAt": "2025-03-21T09:15:00.000Z",
+    "userId": "p2"
+  }
+]

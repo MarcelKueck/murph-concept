@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ms1",
+    "name": "Julia Müller",
+    "email": "julia.mueller@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student1.jpg",
+    "university": "Charité - Universitätsmedizin Berlin",
+    "studyYear": 5,
+    "specialization": "Internal Medicine"
+  },
+  {
+    "id": "ms2",
+    "name": "Markus Fischer",
+    "email": "markus.fischer@med-uni.de",
+    "role": "MEDICAL_STUDENT",
+    "image": "/mock-images/students/student2.jpg",
+    "university": "Ludwig-Maximilians-Universität München",
+    "studyYear": 4,
+    "specialization": "Pediatrics"
+  }
+]

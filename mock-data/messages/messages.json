@@ -1,0 +1,16 @@
+[
+  {
+    "id": "m1",
+    "content": "Hello, I'd like to understand my blood test results, especially the cholesterol values.",
+    "sentAt": "2025-03-20T14:35:00.000Z",
+    "isFromPatient": true,
+    "consultationId": "c1"
+  },
+  {
+    "id": "m2",
+    "content": "Hello! I'll be happy to help you understand your results. I see your LDL cholesterol is slightly elevated. Let's discuss what that means when we meet.",
+    "sentAt": "2025-03-20T14:42:00.000Z",
+    "isFromPatient": false,
+    "consultationId": "c1"
+  }
+]
