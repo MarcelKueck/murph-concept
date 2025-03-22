@@ -508,14 +508,21 @@ export default function HomePage() {
                 {howItWorksSteps.map((step, index) => (
                   <div key={index} className="step-item relative z-10">
                     <div className="flex flex-col items-center">
-                      <div className="h-12 w-12 rounded-full bg-white border-2 border-primary-200 flex items-center justify-center mb-4 text-primary-500">
+                      <div className="h-12 w-12 rounded-full bg-white border-2 border-primary-200 flex items-center justify-center mb-4 text-primary-500 relative z-20">
                         {step.icon}
                       </div>
                       <h3 className="text-lg font-semibold mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-gray-600 text-center">{step.description}</p>
                     </div>
+                    
+                    {/* Extend line from center of current icon to center of next icon */}
                     {index < howItWorksSteps.length - 1 && (
-                      <div className="connecting-line absolute top-6 left-[calc(100%_-_12px)] w-[calc(100%_-_24px)] h-0.5 bg-primary-200"></div>
+                      <div className="connecting-line absolute top-6 left-1/2 h-0.5 bg-primary-200 z-10" 
+                          style={{ 
+                            width: 'calc(100% + 6px)', 
+                            transform: 'translateX(0)' 
+                          }}>
+                      </div>
                     )}
                   </div>
                 ))}
