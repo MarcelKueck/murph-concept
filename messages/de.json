@@ -1,0 +1,371 @@
+{
+  "common": {
+    "actions": {
+      "submit": "Absenden",
+      "cancel": "Abbrechen",
+      "close": "Schließen",
+      "save": "Speichern",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "back": "Zurück",
+      "next": "Weiter",
+      "previous": "Zurück",
+      "search": "Suchen",
+      "filter": "Filtern",
+      "view": "Ansehen",
+      "download": "Herunterladen",
+      "upload": "Hochladen",
+      "send": "Senden",
+      "getStarted": "Jetzt starten",
+      "learnMore": "Mehr erfahren"
+    },
+    "status": {
+      "loading": "Wird geladen...",
+      "success": "Erfolgreich",
+      "error": "Fehler",
+      "warning": "Warnung",
+      "info": "Information",
+      "requested": "Angefragt",
+      "assigned": "Zugewiesen",
+      "scheduled": "Geplant",
+      "inProgress": "In Bearbeitung",
+      "resolved": "Gelöst",
+      "closed": "Abgeschlossen"
+    },
+    "validation": {
+      "required": "Dieses Feld ist erforderlich",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "invalidPassword": "Das Passwort muss mindestens 8 Zeichen lang sein",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein"
+    }
+  },
+  "navigation": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "howItWorks": "Wie es funktioniert",
+    "contact": "Kontakt",
+    "dashboard": "Dashboard",
+    "consultations": "Beratungen",
+    "documents": "Dokumente",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "help": "Hilfe",
+    "feedback": "Feedback",
+    "logIn": "Anmelden",
+    "signUp": "Registrieren",
+    "logOut": "Abmelden"
+  },
+  "auth": {
+    "login": {
+      "title": "Anmelden",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?",
+      "createAccount": "Konto erstellen",
+      "loginButton": "Anmelden"
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "password": "Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "role": "Ich bin ein/e",
+      "patient": "Patient/in",
+      "medicalStudent": "Medizinstudent/in",
+      "universityDetails": "Universitätsdetails",
+      "studyYear": "Studienjahr",
+      "specialization": "Fachgebiet",
+      "alreadyHaveAccount": "Bereits ein Konto?",
+      "logIn": "Anmelden",
+      "registerButton": "Konto erstellen",
+      "termsAgreement": "Durch die Erstellung eines Kontos stimmen Sie unseren Nutzungsbedingungen und Datenschutzrichtlinien zu"
+    }
+  },
+  "landing": {
+    "hero": {
+      "headline": "Medizinische Beratung, wenn Sie sie am meisten brauchen",
+      "subheadline": "Verbinden Sie sich mit Medizinstudenten für verständliche Erklärungen und Beratung",
+      "getStarted": "Jetzt starten",
+      "learnMore": "Mehr erfahren"
+    },
+    "valueProps": {
+      "understand": {
+        "title": "Verstehen Sie Ihre Gesundheit",
+        "description": "Erhalten Sie klare Erklärungen zu medizinischen Dokumenten und Testergebnissen"
+      },
+      "guidance": {
+        "title": "Zugängliche Beratung",
+        "description": "Verbinden Sie sich mit kompetenten Medizinstudenten über Ihren bevorzugten Kommunikationskanal"
+      },
+      "whenToAct": {
+        "title": "Wissen, wann zu handeln ist",
+        "description": "Lassen Sie sich helfen zu entscheiden, ob ein Arztbesuch notwendig ist"
+      },
+      "flexible": {
+        "title": "Flexible Kommunikation",
+        "description": "Wählen Sie zwischen Video, Audio, Text oder asynchronen Nachrichten"
+      }
+    },
+    "howItWorks": {
+      "title": "Wie es funktioniert",
+      "step1": {
+        "title": "Erstellen Sie Ihr Konto",
+        "description": "Registrieren Sie sich als Patient, um auf unsere Plattform zuzugreifen"
+      },
+      "step2": {
+        "title": "Beratung anfragen",
+        "description": "Reichen Sie Ihre Fragen oder Dokumente zur Überprüfung ein"
+      },
+      "step3": {
+        "title": "Mit einem Medizinstudenten verbinden",
+        "description": "Wählen Sie Ihre bevorzugte Kommunikationsmethode"
+      },
+      "step4": {
+        "title": "Erhalten Sie die benötigte Beratung",
+        "description": "Bekommen Sie klare Erklärungen und Ratschläge"
+      }
+    },
+    "testimonials": {
+      "title": "Was Menschen sagen",
+      "patientTestimonial1": {
+        "quote": "Ich verstehe endlich meine Laborergebnisse! Der Medizinstudent hat alles so erklärt, dass es für mich Sinn macht.",
+        "author": "Maria S., Patientin"
+      },
+      "patientTestimonial2": {
+        "quote": "Jemanden zu haben, der mir hilft, die Anweisungen meines Arztes zu verstehen, gibt mir Sicherheit.",
+        "author": "Thomas W., Patient"
+      },
+      "studentTestimonial": {
+        "quote": "Patienten beim Verstehen medizinischer Informationen zu helfen, hat meine Kommunikationsfähigkeiten enorm verbessert.",
+        "author": "Julia M., Medizinstudentin"
+      }
+    },
+    "stats": {
+      "consultations": "Durchgeführte Beratungen",
+      "satisfaction": "Patientenzufriedenheitsrate",
+      "responseTime": "Durchschnittliche Antwortzeit",
+      "students": "Medizinstudenten"
+    },
+    "communication": {
+      "title": "Kommunikationsoptionen",
+      "video": {
+        "title": "Video",
+        "description": "Persönliche Erklärungen mit Dokumentenfreigabe"
+      },
+      "audio": {
+        "title": "Audio",
+        "description": "Private Gespräche mit voller Aufmerksamkeit"
+      },
+      "text": {
+        "title": "Text",
+        "description": "Schriftliche Beratung für Referenz und Klarheit"
+      },
+      "async": {
+        "title": "Asynchron",
+        "description": "Flexibilität für nicht dringende Fragen"
+      }
+    },
+    "cta": {
+      "title": "Werden Sie noch heute Teil von Murph und übernehmen Sie die Kontrolle über Ihre Gesundheitsreise",
+      "button": "Jetzt starten"
+    }
+  },
+  "patient": {
+    "dashboard": {
+      "title": "Patienten-Dashboard",
+      "welcome": "Willkommen zurück, {name}",
+      "consultationHistory": "Beratungsverlauf",
+      "upcomingConsultations": "Anstehende Beratungen",
+      "newConsultation": "Neue Beratung",
+      "documents": "Ihre Dokumente",
+      "uploadDocument": "Dokument hochladen",
+      "noConsultations": "Sie haben noch keine Beratungen",
+      "noDocuments": "Sie haben noch keine Dokumente hochgeladen"
+    },
+    "consultation": {
+      "new": {
+        "title": "Beratung anfragen",
+        "step1": "Beratungstyp",
+        "step2": "Details",
+        "step3": "Kommunikationspräferenz",
+        "step4": "Überprüfung",
+        "type": {
+          "label": "Welche Art von Beratung benötigen Sie?",
+          "labResult": "Interpretation von Laborergebnissen",
+          "medication": "Informationen zu Medikamenten",
+          "imaging": "Erklärung von Bildgebungsergebnissen",
+          "symptoms": "Symptombewertung",
+          "general": "Allgemeine Gesundheitsfrage"
+        },
+        "concern": {
+          "label": "Was ist Ihr Hauptanliegen?",
+          "placeholder": "z.B. Verständnis meiner Blutergebnisse"
+        },
+        "description": {
+          "label": "Bitte beschreiben Sie Ihr Anliegen detailliert",
+          "placeholder": "Geben Sie so viele Informationen wie möglich, um dem Medizinstudenten zu helfen, Ihr Anliegen zu verstehen"
+        },
+        "documents": {
+          "label": "Relevante Dokumente anhängen (optional)",
+          "select": "Dokumente auswählen",
+          "drag": "oder Dateien hierher ziehen"
+        },
+        "communication": {
+          "label": "Wie möchten Sie kommunizieren?",
+          "video": "Videoanruf",
+          "audio": "Audioanruf",
+          "text": "Text-Chat",
+          "async": "Asynchrone Nachrichten"
+        },
+        "schedule": {
+          "label": "Wann möchten Sie diese Beratung planen?",
+          "asap": "So bald wie möglich",
+          "specific": "Bestimmtes Datum und Uhrzeit"
+        },
+        "review": {
+          "title": "Überprüfen Sie Ihre Anfrage",
+          "type": "Beratungstyp:",
+          "concern": "Hauptanliegen:",
+          "communication": "Kommunikationsmethode:",
+          "schedule": "Zeitplanung:",
+          "documents": "Angehängte Dokumente:",
+          "submit": "Anfrage einreichen"
+        },
+        "success": {
+          "title": "Beratungsanfrage eingereicht",
+          "message": "Ihre Beratungsanfrage wurde erfolgreich eingereicht. Wir benachrichtigen Sie, wenn ein Medizinstudent zugewiesen wurde.",
+          "backToDashboard": "Zurück zum Dashboard"
+        }
+      },
+      "details": {
+        "title": "Beratungsdetails",
+        "status": "Status",
+        "type": "Typ",
+        "primaryConcern": "Hauptanliegen",
+        "description": "Beschreibung",
+        "communicationChannel": "Kommunikationskanal",
+        "scheduledFor": "Geplant für",
+        "createdAt": "Angefragt am",
+        "assignedTo": "Zugewiesen an",
+        "documents": "Zugehörige Dokumente",
+        "messages": "Nachrichten",
+        "actions": {
+          "cancel": "Beratung abbrechen",
+          "reschedule": "Neu planen",
+          "connect": "Jetzt verbinden",
+          "sendMessage": "Nachricht senden",
+          "provideRating": "Erfahrung bewerten"
+        }
+      }
+    }
+  },
+  "medical-student": {
+    "dashboard": {
+      "title": "Medizinstudenten-Dashboard",
+      "welcome": "Willkommen zurück, {name}",
+      "activeConsultations": "Aktive Beratungen",
+      "availableConsultations": "Verfügbare Beratungen",
+      "consultationHistory": "Beratungsverlauf",
+      "availability": "Ihre Verfügbarkeit",
+      "statistics": "Ihre Statistiken",
+      "assignedConsultations": "Zugewiesene Beratungen",
+      "requestedConsultations": "Angefragte Beratungen",
+      "updateAvailability": "Verfügbarkeit aktualisieren",
+      "noConsultations": "Derzeit keine Beratungen verfügbar"
+    },
+    "availability": {
+      "title": "Verwalten Sie Ihre Verfügbarkeit",
+      "timezoneInfo": "Alle Zeiten sind in Ihrer lokalen Zeitzone",
+      "generalAvailability": "Allgemeine Verfügbarkeit",
+      "specificDates": "Bestimmte Daten",
+      "consultationTypes": "Beratungstypen",
+      "communicationPreferences": "Kommunikationspräferenzen",
+      "availableHours": "Verfügbare Stunden",
+      "unavailableDates": "Nicht verfügbare Daten",
+      "save": "Änderungen speichern"
+    },
+    "consultation": {
+      "accept": "Beratung annehmen",
+      "decline": "Ablehnen",
+      "details": "Details anzeigen",
+      "message": "Nachricht an Patient",
+      "scheduleCall": "Anruf planen",
+      "startCall": "Anruf starten",
+      "completeConsultation": "Beratung abschließen",
+      "patientInfo": "Patienteninformation",
+      "consultationNotes": "Beratungsnotizen",
+      "saveNotes": "Notizen speichern"
+    }
+  },
+  "communication": {
+    "chat": {
+      "placeholder": "Nachricht eingeben...",
+      "send": "Senden",
+      "attach": "Datei anhängen",
+      "typing": "{name} schreibt...",
+      "today": "Heute",
+      "yesterday": "Gestern"
+    },
+    "video": {
+      "connecting": "Verbindung wird hergestellt...",
+      "connected": "Verbunden",
+      "disconnected": "Verbindung getrennt",
+      "microphoneOn": "Mikrofon an",
+      "microphoneOff": "Mikrofon aus",
+      "cameraOn": "Kamera an",
+      "cameraOff": "Kamera aus",
+      "screenShare": "Bildschirm teilen",
+      "stopSharing": "Teilen beenden",
+      "endCall": "Anruf beenden",
+      "callEnded": "Anruf beendet",
+      "reconnecting": "Verbindung wird wiederhergestellt..."
+    },
+    "audio": {
+      "connecting": "Verbindung wird hergestellt...",
+      "connected": "Verbunden",
+      "disconnected": "Verbindung getrennt",
+      "microphoneOn": "Mikrofon an",
+      "microphoneOff": "Mikrofon aus",
+      "endCall": "Anruf beenden",
+      "callEnded": "Anruf beendet",
+      "reconnecting": "Verbindung wird wiederhergestellt..."
+    },
+    "documents": {
+      "shared": "{name} hat ein Dokument geteilt: {documentName}",
+      "view": "Ansehen",
+      "download": "Herunterladen"
+    }
+  },
+  "feedback": {
+    "title": "Teilen Sie Ihr Feedback",
+    "question": "Wie würden Sie Ihre Erfahrung bewerten?",
+    "comment": "Ihr Feedback",
+    "commentPlaceholder": "Erzählen Sie uns von Ihrer Erfahrung...",
+    "submit": "Feedback absenden",
+    "thankYou": "Vielen Dank für Ihr Feedback!",
+    "responseRecorded": "Ihre Antwort wurde aufgezeichnet.",
+    "yesOption": "Ja",
+    "somewhatOption": "Teilweise",
+    "noOption": "Nein",
+    "categories": {
+      "userInterface": "Benutzeroberfläche",
+      "functionality": "Funktionalität",
+      "performance": "Leistung",
+      "content": "Inhalt",
+      "support": "Unterstützung"
+    }
+  },
+  "footer": {
+    "about": "Über Murph",
+    "description": "Wir machen medizinische Informationen für jeden zugänglich und verständlich.",
+    "quickLinks": "Schnelllinks",
+    "legal": {
+      "title": "Rechtliches",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen"
+    },
+    "copyright": "© {year} Murph. Alle Rechte vorbehalten."
+  }
+}

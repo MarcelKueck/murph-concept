@@ -42,8 +42,11 @@ murph-website/
 ├── providers/                    # React context providers
 ├── styles/                       # Global styles
 ├── public/                       # Static assets
-├── mock-data/                    # Mock data JSON files
-└── messages/                     # Internationalization files
+├── messages/                     # Internationalization files
+│   ├── en.json                   # English translations
+│   └── de.json                   # German translations
+├── middleware.ts                 # Internationalization middleware
+└── mock-data/                    # Mock data JSON files
 ```
 
 ## Implementation Guidelines
@@ -84,6 +87,40 @@ murph-website/
 - Extract all text into message files
 - Use proper pluralization and formatting
 - Handle RTL/LTR layout changes if needed
+
+#### Internationalization Implementation Details
+
+1. **Locale-Based Routing**
+   - Use dynamic route segments with the `[locale]` parameter
+   - Support German (primary) and English (secondary) languages
+   - Default to German if no locale is specified
+
+2. **Message Structure**
+   - Organize messages by features and pages with nested objects
+   - Include all UI text, labels, and content in message files
+   - Support pluralization and variables where needed
+
+3. **Formatting**
+   - Format dates according to locale conventions:
+     - German: DD.MM.YYYY (24.12.2023)
+     - English: MM/DD/YYYY (12/24/2023)
+   - Format numbers according to locale conventions:
+     - German: 1.234,56
+     - English: 1,234.56
+   - Format currencies with appropriate symbols:
+     - German: 42,50 €
+     - English: $42.50
+
+4. **Language Switching**
+   - Provide a UI component for switching between languages
+   - Persist language preference in a cookie
+   - Support Accept-Language header for initial language detection
+
+5. **Implementation Components**
+   - `IntlProvider.tsx`: React context provider for internationalization
+   - `middleware.ts`: Next.js middleware for locale-based routing
+   - `i18n-formatters.ts`: Utility functions for formatting dates and numbers
+   - `LanguageSwitcher.tsx`: UI component for changing the language
 
 ### Mock Data Structure
 

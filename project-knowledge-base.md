@@ -22,21 +22,21 @@
 
 ## Project Status Tracking
 
-| Component                 | Status     | Assigned To      | Last Updated |
-| ------------------------- | ---------- | ---------------- | ------------ |
-| Project Timeline          | 🟢 Complete | Project Manager  | 2025-03-21   |
-| Project Setup             | 🟢 Complete | Frontend Dev     | 2025-03-21   |
-| Design System             | 🟢 Complete | UI/UX Design     | 2025-03-21   |
-| UI Component Library      | 🟢 Complete | Frontend Dev     | 2025-03-21   |
-| Mock Data                 | 🟢 Complete | Content & Loc    | 2025-03-21   |
-| Landing Page              | 🟡 Planned  | UI/UX + Frontend | YYYY-MM-DD   |
-| Authentication            | 🟡 Planned  | Frontend Dev     | YYYY-MM-DD   |
-| Patient Dashboard         | 🟡 Planned  | Frontend Dev     | YYYY-MM-DD   |
-| Consultation Flow         | 🟡 Planned  | Frontend Dev     | YYYY-MM-DD   |
-| Medical Student Dashboard | 🟡 Planned  | Frontend Dev     | YYYY-MM-DD   |
-| Communication Interfaces  | 🟡 Planned  | Frontend Dev     | YYYY-MM-DD   |
-| Localization              | 🟡 Planned  | Content & Loc    | YYYY-MM-DD   |
-| Deployment                | 🟡 Planned  | Testing & Deploy | YYYY-MM-DD   |
+| Component                 | Status        | Assigned To      | Last Updated |
+| ------------------------- | ------------- | ---------------- | ------------ |
+| Project Timeline          | 🟢 Complete    | Project Manager  | 2025-03-21   |
+| Project Setup             | 🟢 Complete    | Frontend Dev     | 2025-03-21   |
+| Design System             | 🟢 Complete    | UI/UX Design     | 2025-03-21   |
+| UI Component Library      | 🟢 Complete    | Frontend Dev     | 2025-03-21   |
+| Mock Data                 | 🟢 Complete    | Content & Loc    | 2025-03-21   |
+| Internationalization      | 🟠 In Progress | Content & Loc    | 2025-03-22   |
+| Landing Page              | 🟡 Planned     | UI/UX + Frontend | YYYY-MM-DD   |
+| Authentication            | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
+| Patient Dashboard         | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
+| Consultation Flow         | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
+| Medical Student Dashboard | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
+| Communication Interfaces  | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
+| Deployment                | 🟡 Planned     | Testing & Deploy | YYYY-MM-DD   |
 
 Status: 🟢 Complete | 🟠 In Progress | 🟡 Planned | 🔴 Blocked
 
@@ -46,9 +46,9 @@ Status: 🟢 Complete | 🟠 In Progress | 🟡 Planned | 🔴 Blocked
 
 We have successfully completed the project initialization phase. The Project Manager has created a detailed project timeline with specific tasks, dependencies, and milestones. The UI/UX Design Agent has created a comprehensive design system with detailed component guidelines, color palette, typography, spacing system, and animation principles following Apple-like design principles. The Frontend Development Agent has set up the Next.js 15 project structure with TypeScript, Tailwind CSS configuration according to the design system specifications, and created the full folder structure with basic component placeholders.
 
-**MILESTONE 2: Core Building Blocks Progress ✅**
+**MILESTONE 2: Core Building Blocks Progress 🟠**
 
-We have completed the Week 2 tasks:
+We have made progress on the Week 2 tasks:
 1. Task 2.1: Mock Data Creation (Content & Localization Agent) ✅ - Completed on 2025-03-21
    - Developed comprehensive mock data for 10 patients, 8 medical students, 20 consultations, 15 documents, and 30 messages
    - Created realistic German profiles with diverse demographics and medical scenarios
@@ -62,177 +62,119 @@ We have completed the Week 2 tasks:
    - Added special components for communication interfaces (chat, video, audio)
    - Created a test page for verifying component functionality
 
-3. Task 2.3: Internationalization Setup (Content & Localization Agent) - Planned
+3. Task 2.3: Internationalization Setup (Content & Localization Agent) 🟠 - In Progress on 2025-03-22
+   - Created comprehensive message files for both German and English with structured content organization
+   - Restructured app directory to support [locale] routing
+   - Implemented internationalization middleware with next-intl v4
+   - Created a next-intl.config.js file at the project root
+   - Created provider components for internationalization
+   - Currently debugging remaining issues with locale resolution and component usage
 
-## Project Structure
+## Current Project Structure
 
-Based on the current tree output, the Next.js project has the following structure:
+The project has been restructured to support locale-based routing using the next-intl library:
 
 ```
 murph-concept/
 │
 ├── app/                          # Next.js App Router
-│   ├── page.tsx                  # Homepage component
-│   ├── layout.tsx                # Root layout component
 │   ├── globals.css               # Global CSS with Tailwind
-│   ├── test/                     # Component testing page
-│   │   └── page.tsx              # Test page for UI components
-│   ├── auth/                     # Authentication routes
-│   │   ├── login/                # Login page
-│   │   └── register/             # Registration page
-│   ├── patient/                  # Patient-specific routes
-│   │   └── dashboard/            # Patient dashboard
-│   ├── medical-student/          # Medical student routes
-│   │   └── dashboard/            # Medical student dashboard
-│   ├── chat/                     # Chat interface
-│   └── video-call/               # Video call interface
+│   ├── favicon.ico               # Site favicon
+│   └── [locale]/                 # Locale-based routing
+│       ├── layout.tsx            # Locale layout component
+│       ├── page.tsx              # Homepage component
+│       ├── not-found.tsx         # Not found page
+│       ├── auth/                 # Authentication routes
+│       │   ├── login/            # Login page
+│       │   └── register/         # Registration page
+│       ├── patient/              # Patient-specific routes
+│       │   └── dashboard/        # Patient dashboard
+│       ├── medical-student/      # Medical student routes
+│       │   └── dashboard/        # Medical student dashboard
+│       ├── chat/                 # Chat interface
+│       └── video-call/           # Video call interface
 │
 ├── components/                   # React components
-│   ├── ui/                       # UI components
-│   │   ├── avatar/               # Avatar components
-│   │   │   ├── Avatar.tsx        # User avatar component
-│   │   │   ├── AvatarGroup.tsx   # Group of avatars
-│   │   │   ├── UserInfo.tsx      # User info display
-│   │   │   └── UserListItem.tsx  # User list item
-│   │   ├── buttons/              # Button components
-│   │   │   ├── Button.tsx        # Enhanced button component
-│   │   │   └── IconButton.tsx    # Icon-only button component
-│   │   ├── cards/                # Card components
-│   │   │   ├── Card.tsx          # Base card with multiple variants
-│   │   │   ├── ConsultationCard.tsx  # Consultation-specific card
-│   │   │   ├── DocumentCard.tsx  # Document display card
-│   │   │   └── ProfileCard.tsx   # User profile card
-│   │   ├── communication/        # Communication components
-│   │   │   ├── ChatBubble.tsx    # Chat message bubble
-│   │   │   ├── ChatInput.tsx     # Text input for chat
-│   │   │   ├── ChatContainer.tsx # Container for chat messages
-│   │   │   ├── VideoCallContainer.tsx # Video call interface
-│   │   │   ├── VideoCallButton.tsx # Video call control button
-│   │   │   ├── AudioCallContainer.tsx # Audio call interface
-│   │   │   ├── MessageInput.tsx  # Text input for messages
-│   │   │   ├── AsyncMessageContainer.tsx # Async messaging container
-│   │   │   ├── DocumentShare.tsx # Document sharing component
-│   │   │   └── ConsultationRequestSummary.tsx # Request summary
-│   │   ├── elements/             # UI element components
-│   │   │   ├── Tag.tsx           # Tag/chip component
-│   │   │   ├── Divider.tsx       # Horizontal/vertical divider
-│   │   │   ├── EmptyState.tsx    # Empty state message
-│   │   │   ├── Stat.tsx          # Statistic display
-│   │   │   └── StatsGroup.tsx    # Group of statistics
-│   │   ├── feedback/             # Feedback components
-│   │   │   ├── StarRating.tsx    # Star rating component
-│   │   │   ├── FeedbackForm.tsx  # Feedback form
-│   │   │   ├── FeedbackWidget.tsx # Floating feedback widget
-│   │   │   ├── SatisfactionSurvey.tsx # Quick satisfaction survey
-│   │   │   └── NPSSurvey.tsx     # Net Promoter Score survey
-│   │   ├── forms/                # Form components
-│   │   │   ├── Input.tsx         # Text input component
-│   │   │   ├── TextArea.tsx      # Multi-line input
-│   │   │   ├── Select.tsx        # Dropdown component
-│   │   │   ├── Checkbox.tsx      # Checkbox component
-│   │   │   ├── Radio.tsx         # Radio button component
-│   │   │   ├── RadioGroup.tsx    # Group of radio buttons
-│   │   │   └── FormGroup.tsx     # Form section container
-│   │   ├── layout/               # Layout components
-│   │   │   ├── PageContainer.tsx # Page container
-│   │   │   ├── PageHeader.tsx    # Page header with title and actions
-│   │   │   ├── ContentSection.tsx # Content section container
-│   │   │   ├── SplitLayout.tsx   # Two-column layout
-│   │   │   ├── GridLayout.tsx    # Responsive grid layout
-│   │   │   ├── DashboardLayout.tsx # Layout with sidebar
-│   │   │   ├── AuthLayout.tsx    # Authentication page layout
-│   │   │   ├── MainLayout.tsx    # Main site layout
-│   │   │   └── ResponsiveContainer.tsx # Responsive container
-│   │   ├── modal/                # Modal components
-│   │   │   ├── Modal.tsx         # Modal dialog component
-│   │   │   ├── ModalBody.tsx     # Modal content container
-│   │   │   ├── ModalFooter.tsx   # Modal footer with actions
-│   │   │   ├── Drawer.tsx        # Side drawer component
-│   │   │   ├── Alert.tsx         # Alert message component
-│   │   │   ├── Toast.tsx         # Toast notification
-│   │   │   └── ToastContainer.tsx # Container for toasts
-│   │   ├── navigation/           # Navigation components
-│   │   │   ├── NavItem.tsx       # Navigation item
-│   │   │   ├── TabNavigation.tsx # Tab navigation
-│   │   │   ├── Breadcrumbs.tsx   # Breadcrumb navigation
-│   │   │   ├── Sidebar.tsx       # Side navigation
-│   │   │   └── Pagination.tsx    # Pagination controls
-│   │   └── status/               # Status components
-│   │       ├── Badge.tsx         # Badge component
-│   │       ├── StatusBadge.tsx   # Status-specific badge
-│   │       ├── LinearProgress.tsx # Progress bar
-│   │       ├── Spinner.tsx       # Loading spinner
-│   │       └── Skeleton.tsx      # Loading skeleton
+│   ├── ui/                       # UI components with all the subfolders and components
 │   ├── core/                     # Core application components
 │   ├── animations/               # Animation components
 │   ├── patient/                  # Patient-specific components
 │   └── medical-student/          # Medical student components
 │
+├── messages/                     # Internationalization files
+│   ├── en.json                   # English translations
+│   └── de.json                   # German translations
+│
 ├── lib/                          # Utility functions
 │   └── utils/                    # Utility functions
 │       ├── formatters.ts         # Data formatting utilities
+│       ├── i18n-formatters.ts    # Internationalization formatters
 │       └── validators.ts         # Form validation utilities
 │
-├── hooks/                        # Custom React hooks
-│   ├── useAuth.ts                # Authentication hook
-│   ├── useConsultations.ts       # Consultations data hook
-│   └── useDocuments.ts           # Documents data hook
+├── middleware.ts                 # Internationalization middleware (root level)
+├── next-intl.config.js           # Configuration file for next-intl
 │
 ├── providers/                    # React context providers
 │   ├── AuthProvider.tsx          # Authentication context
+│   ├── IntlProvider.tsx          # Internationalization provider
 │   └── ThemeProvider.tsx         # Theme context
 │
 ├── mock-data/                    # Mock data JSON files
 │   ├── users/                    # User mock data
-│   │   ├── patients.json         # Patient user data (10 profiles)
-│   │   └── medical-students.json # Medical student user data (8 profiles)
+│   │   ├── patients.json         # Patient user data
+│   │   └── medical-students.json # Medical student user data
 │   ├── consultations/            # Consultation mock data
-│   │   └── consultations.json    # Consultation data (20 consultations)
+│   │   └── consultations.json    # Consultation data
 │   ├── documents/                # Document mock data
-│   │   └── documents.json        # Document data (15 documents)
+│   │   └── documents.json        # Document data
 │   └── messages/                 # Message mock data
-│       └── messages.json         # Message data (30 messages)
+│       └── messages.json         # Message data
 │
 ├── public/                       # Static assets
-├── styles/                       # Additional styles (if needed)
 ├── next.config.js                # Next.js configuration
 ├── tailwind.config.js            # Tailwind CSS configuration
 ├── postcss.config.js             # PostCSS configuration
 └── tsconfig.json                 # TypeScript configuration
 ```
 
-## Technology Setup
+## Internationalization Implementation Details
 
-- **Framework**: Next.js 15 with App Router
-- **UI Library**: React 19
-- **TypeScript**: Configured with strict type checking
-- **Styling**: Tailwind CSS v3 with custom theme extending the design system
-- **Form Handling**: Using react-hook-form for forms
-- **State Management**: Zustand for client-side state
-- **Animations**: Set up with Framer Motion
+The current internationalization setup uses next-intl version 4.x and has:
 
-## Testing Approach
+1. **Locale-Based Routing**:
+   - Using dynamic route segments with the `[locale]` parameter
+   - Supporting German and English languages
+   - Default set to German
 
-A component testing page has been created at `/app/test/page.tsx` to verify the functionality of the UI components before integration into the actual pages. This allows for testing individual components in isolation and ensuring they work correctly with different props and states.
+2. **Message Structure**:
+   - Comprehensive JSON files with all UI text organized by features and pages
+   - Support for variables and pluralization
+
+3. **Current Issues**:
+   - The dynamic params handling needs adjustment to work with Next.js 15
+   - The next-intl configuration needs to be properly recognized
+   - Component-level translation hooks need to be implemented correctly
 
 ## Upcoming Tasks
 
-1. **Internationalization Setup** (Content & Localization Agent)
-   - Configure internationalization for German and English
-   - Due: Day 10 (Priority: Medium)
+Once the internationalization setup is fully resolved:
 
-2. **Landing Page Design** (UI/UX Design Agent)
+1. **Landing Page Design** (UI/UX Design Agent)
    - Design detailed landing page layout
    - Due: Day 12 (Priority: Medium)
 
-3. **Landing Page Implementation** (Frontend Development Agent)
+2. **Landing Page Implementation** (Frontend Development Agent)
    - Develop responsive landing page with animations
    - Due: Day 14 (Priority: Medium)
+
+3. **Authentication Flows** (Frontend Development Agent)
+   - Create simple mock authentication interfaces for patient and medical student login/registration
+   - Due: Day 15 (Priority: Medium)
 
 ## Weekly Review Schedule
 
 - **Week 1 Review:** Completed on Day 5 - MILESTONE 1 achieved ✅
-- **Week 2 Review:** Scheduled for Day 10 - MILESTONE 2 achieved ✅
+- **Week 2 Review:** Scheduled for Day 10 - MILESTONE 2 in progress 🟠
 - **Week 3 Review:** Scheduled for Day 15
 - **Week 4 Review:** Scheduled for Day 20
 - **Final Review:** Scheduled for Day 25

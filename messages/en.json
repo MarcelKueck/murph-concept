@@ -1,0 +1,371 @@
+{
+  "common": {
+    "actions": {
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "close": "Close",
+      "save": "Save",
+      "edit": "Edit",
+      "delete": "Delete",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "search": "Search",
+      "filter": "Filter",
+      "view": "View",
+      "download": "Download",
+      "upload": "Upload",
+      "send": "Send",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More"
+    },
+    "status": {
+      "loading": "Loading...",
+      "success": "Success",
+      "error": "Error",
+      "warning": "Warning",
+      "info": "Information",
+      "requested": "Requested",
+      "assigned": "Assigned",
+      "scheduled": "Scheduled",
+      "inProgress": "In Progress",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "invalidPassword": "Password must be at least 8 characters long",
+      "passwordMismatch": "Passwords do not match"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "howItWorks": "How It Works",
+    "contact": "Contact",
+    "dashboard": "Dashboard",
+    "consultations": "Consultations",
+    "documents": "Documents",
+    "profile": "Profile",
+    "settings": "Settings",
+    "help": "Help",
+    "feedback": "Feedback",
+    "logIn": "Log In",
+    "signUp": "Sign Up",
+    "logOut": "Log Out"
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "email": "Email Address",
+      "password": "Password",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create an account",
+      "loginButton": "Log In"
+    },
+    "register": {
+      "title": "Create an Account",
+      "name": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "role": "I am a",
+      "patient": "Patient",
+      "medicalStudent": "Medical Student",
+      "universityDetails": "University Details",
+      "studyYear": "Study Year",
+      "specialization": "Specialization",
+      "alreadyHaveAccount": "Already have an account?",
+      "logIn": "Log in",
+      "registerButton": "Create Account",
+      "termsAgreement": "By creating an account, you agree to our Terms of Service and Privacy Policy"
+    }
+  },
+  "landing": {
+    "hero": {
+      "headline": "Medical guidance when you need it most",
+      "subheadline": "Connect with medical students for accessible explanations and advice",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More"
+    },
+    "valueProps": {
+      "understand": {
+        "title": "Understand Your Health",
+        "description": "Get clear explanations of medical documents and test results"
+      },
+      "guidance": {
+        "title": "Accessible Guidance",
+        "description": "Connect with knowledgeable medical students through your preferred channel"
+      },
+      "whenToAct": {
+        "title": "Know When to Act",
+        "description": "Get help determining if a doctor visit is necessary"
+      },
+      "flexible": {
+        "title": "Flexible Communication",
+        "description": "Choose between video, audio, text, or asynchronous messages"
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Create your account",
+        "description": "Sign up as a patient to access our platform"
+      },
+      "step2": {
+        "title": "Request a consultation",
+        "description": "Submit your questions or documents for review"
+      },
+      "step3": {
+        "title": "Connect with a medical student",
+        "description": "Choose your preferred communication method"
+      },
+      "step4": {
+        "title": "Get the guidance you need",
+        "description": "Receive clear explanations and advice"
+      }
+    },
+    "testimonials": {
+      "title": "What People Say",
+      "patientTestimonial1": {
+        "quote": "I finally understand my lab results! The medical student explained everything in a way that made sense to me.",
+        "author": "Maria S., Patient"
+      },
+      "patientTestimonial2": {
+        "quote": "Having someone available to help me interpret my doctor's instructions gives me peace of mind.",
+        "author": "Thomas W., Patient"
+      },
+      "studentTestimonial": {
+        "quote": "Helping patients understand medical information has improved my communication skills tremendously.",
+        "author": "Julia M., Medical Student"
+      }
+    },
+    "stats": {
+      "consultations": "Consultations Completed",
+      "satisfaction": "Patient Satisfaction Rate",
+      "responseTime": "Average Response Time",
+      "students": "Medical Students"
+    },
+    "communication": {
+      "title": "Communication Options",
+      "video": {
+        "title": "Video",
+        "description": "Face-to-face explanations with document sharing"
+      },
+      "audio": {
+        "title": "Audio",
+        "description": "Private conversations with full attention"
+      },
+      "text": {
+        "title": "Text",
+        "description": "Written guidance for reference and clarity"
+      },
+      "async": {
+        "title": "Asynchronous",
+        "description": "Flexibility for non-urgent questions"
+      }
+    },
+    "cta": {
+      "title": "Join Murph today and take control of your health journey",
+      "button": "Get Started Now"
+    }
+  },
+  "patient": {
+    "dashboard": {
+      "title": "Patient Dashboard",
+      "welcome": "Welcome back, {name}",
+      "consultationHistory": "Consultation History",
+      "upcomingConsultations": "Upcoming Consultations",
+      "newConsultation": "New Consultation",
+      "documents": "Your Documents",
+      "uploadDocument": "Upload Document",
+      "noConsultations": "You don't have any consultations yet",
+      "noDocuments": "You haven't uploaded any documents yet"
+    },
+    "consultation": {
+      "new": {
+        "title": "Request a Consultation",
+        "step1": "Consultation Type",
+        "step2": "Details",
+        "step3": "Communication Preference",
+        "step4": "Review",
+        "type": {
+          "label": "What type of consultation do you need?",
+          "labResult": "Lab Result Interpretation",
+          "medication": "Medication Information",
+          "imaging": "Imaging Result Explanation",
+          "symptoms": "Symptom Assessment",
+          "general": "General Health Question"
+        },
+        "concern": {
+          "label": "What is your primary concern?",
+          "placeholder": "e.g., Understanding my blood test results"
+        },
+        "description": {
+          "label": "Please describe your concern in detail",
+          "placeholder": "Provide as much information as possible to help the medical student understand your concern"
+        },
+        "documents": {
+          "label": "Attach relevant documents (optional)",
+          "select": "Select documents",
+          "drag": "or drag and drop files here"
+        },
+        "communication": {
+          "label": "How would you like to communicate?",
+          "video": "Video Call",
+          "audio": "Audio Call",
+          "text": "Text Chat",
+          "async": "Asynchronous Messaging"
+        },
+        "schedule": {
+          "label": "When would you like to schedule this consultation?",
+          "asap": "As soon as possible",
+          "specific": "Specific date and time"
+        },
+        "review": {
+          "title": "Review Your Request",
+          "type": "Consultation Type:",
+          "concern": "Primary Concern:",
+          "communication": "Communication Method:",
+          "schedule": "Scheduling Preference:",
+          "documents": "Attached Documents:",
+          "submit": "Submit Request"
+        },
+        "success": {
+          "title": "Consultation Request Submitted",
+          "message": "Your consultation request has been submitted successfully. We'll notify you when a medical student is assigned.",
+          "backToDashboard": "Back to Dashboard"
+        }
+      },
+      "details": {
+        "title": "Consultation Details",
+        "status": "Status",
+        "type": "Type",
+        "primaryConcern": "Primary Concern",
+        "description": "Description",
+        "communicationChannel": "Communication Channel",
+        "scheduledFor": "Scheduled For",
+        "createdAt": "Requested On",
+        "assignedTo": "Assigned To",
+        "documents": "Related Documents",
+        "messages": "Messages",
+        "actions": {
+          "cancel": "Cancel Consultation",
+          "reschedule": "Reschedule",
+          "connect": "Connect Now",
+          "sendMessage": "Send Message",
+          "provideRating": "Rate Experience"
+        }
+      }
+    }
+  },
+  "medical-student": {
+    "dashboard": {
+      "title": "Medical Student Dashboard",
+      "welcome": "Welcome back, {name}",
+      "activeConsultations": "Active Consultations",
+      "availableConsultations": "Available Consultations",
+      "consultationHistory": "Consultation History",
+      "availability": "Your Availability",
+      "statistics": "Your Statistics",
+      "assignedConsultations": "Assigned Consultations",
+      "requestedConsultations": "Requested Consultations",
+      "updateAvailability": "Update Availability",
+      "noConsultations": "No consultations available at the moment"
+    },
+    "availability": {
+      "title": "Manage Your Availability",
+      "timezoneInfo": "All times are in your local timezone",
+      "generalAvailability": "General Availability",
+      "specificDates": "Specific Dates",
+      "consultationTypes": "Consultation Types",
+      "communicationPreferences": "Communication Preferences",
+      "availableHours": "Available Hours",
+      "unavailableDates": "Unavailable Dates",
+      "save": "Save Changes"
+    },
+    "consultation": {
+      "accept": "Accept Consultation",
+      "decline": "Decline",
+      "details": "View Details",
+      "message": "Message Patient",
+      "scheduleCall": "Schedule Call",
+      "startCall": "Start Call",
+      "completeConsultation": "Complete Consultation",
+      "patientInfo": "Patient Information",
+      "consultationNotes": "Consultation Notes",
+      "saveNotes": "Save Notes"
+    }
+  },
+  "communication": {
+    "chat": {
+      "placeholder": "Type your message...",
+      "send": "Send",
+      "attach": "Attach file",
+      "typing": "{name} is typing...",
+      "today": "Today",
+      "yesterday": "Yesterday"
+    },
+    "video": {
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "microphoneOn": "Microphone On",
+      "microphoneOff": "Microphone Off",
+      "cameraOn": "Camera On",
+      "cameraOff": "Camera Off",
+      "screenShare": "Share Screen",
+      "stopSharing": "Stop Sharing",
+      "endCall": "End Call",
+      "callEnded": "Call Ended",
+      "reconnecting": "Reconnecting..."
+    },
+    "audio": {
+      "connecting": "Connecting...",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "microphoneOn": "Microphone On",
+      "microphoneOff": "Microphone Off",
+      "endCall": "End Call",
+      "callEnded": "Call Ended",
+      "reconnecting": "Reconnecting..."
+    },
+    "documents": {
+      "shared": "{name} shared a document: {documentName}",
+      "view": "View",
+      "download": "Download"
+    }
+  },
+  "feedback": {
+    "title": "Share Your Feedback",
+    "question": "How would you rate your experience?",
+    "comment": "Your feedback",
+    "commentPlaceholder": "Tell us about your experience...",
+    "submit": "Submit Feedback",
+    "thankYou": "Thank you for your feedback!",
+    "responseRecorded": "Your response has been recorded.",
+    "yesOption": "Yes",
+    "somewhatOption": "Somewhat",
+    "noOption": "No",
+    "categories": {
+      "userInterface": "User Interface",
+      "functionality": "Functionality",
+      "performance": "Performance",
+      "content": "Content",
+      "support": "Support"
+    }
+  },
+  "footer": {
+    "about": "About Murph",
+    "description": "Making medical information accessible and understandable for everyone.",
+    "quickLinks": "Quick Links",
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© {year} Murph. All rights reserved."
+  }
+}
