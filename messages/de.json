@@ -170,6 +170,16 @@
     "cta": {
       "title": "Werden Sie noch heute Teil von Murph und übernehmen Sie die Kontrolle über Ihre Gesundheitsreise",
       "button": "Jetzt starten"
+    },
+    "footer": {
+      "description": "Wir machen medizinische Informationen für jeden zugänglich und verständlich.",
+      "quickLinks": "Schnelllinks",
+      "legal": {
+        "title": "Rechtliches",
+        "privacy": "Datenschutzrichtlinie",
+        "terms": "Nutzungsbedingungen"
+      },
+      "copyright": "© {year} Murph. Alle Rechte vorbehalten."
     }
   },
   "patient": {

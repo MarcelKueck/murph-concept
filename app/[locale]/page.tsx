@@ -1,8 +1,7 @@
-import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { LanguageSwitcher } from '@/components/ui/navigation/LanguageSwitcher';
+import {useTranslations} from 'next-intl';
+import {Link} from '../../i18n/navigation'; // Adjust path based on your structure
+import { LanguageSwitcher } from '../../components/ui/navigation/LanguageSwitcher';
 
-// Make this a server component that accepts params
 export default function HomePage() {
   const t = useTranslations('landing');
   const n = useTranslations('navigation');

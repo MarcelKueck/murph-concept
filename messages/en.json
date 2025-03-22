@@ -170,6 +170,16 @@
     "cta": {
       "title": "Join Murph today and take control of your health journey",
       "button": "Get Started Now"
+    },
+    "footer": {
+      "description": "Making medical information accessible and understandable for everyone.",
+      "quickLinks": "Quick Links",
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "copyright": "© {year} Murph. All rights reserved."
     }
   },
   "patient": {

@@ -26,9 +26,8 @@ murph-website/
 │   │   ├── auth/                 # Authentication routes (mock)
 │   │   ├── patient/              # Patient-specific routes
 │   │   ├── medical-student/      # Medical student routes
-│   │   ├── chat/                 # Chat interface (mock)
-│   │   ├── video-call/           # Video call interface (mock)
-│   │   └── about/                # Informational pages
+│   │   ├── test/                 # Component testing page
+│   │   └── not-found.tsx         # Not found page
 │
 ├── components/                   # React components
 │   ├── ui/                       # UI components
@@ -36,6 +35,11 @@ murph-website/
 │   ├── animations/               # Animation components
 │   ├── patient/                  # Patient-specific components
 │   └── medical-student/          # Medical student components
+│
+├── i18n/                         # Internationalization utilities
+│   ├── navigation.ts             # Navigation utilities for i18n
+│   ├── request.ts                # Request utilities for i18n
+│   └── routing.ts                # Routing utilities for i18n
 │
 ├── lib/                          # Utility functions and shared code
 ├── hooks/                        # Custom React hooks
@@ -46,6 +50,7 @@ murph-website/
 │   ├── en.json                   # English translations
 │   └── de.json                   # German translations
 ├── middleware.ts                 # Internationalization middleware
+├── next-intl.config.js           # next-intl configuration
 └── mock-data/                    # Mock data JSON files
 ```
 
@@ -83,44 +88,108 @@ murph-website/
 
 ### Internationalization
 
-- Implement language switching (German/English)
-- Extract all text into message files
-- Use proper pluralization and formatting
-- Handle RTL/LTR layout changes if needed
+The project uses next-intl for comprehensive internationalization support:
 
-#### Internationalization Implementation Details
+#### 1. Directory Structure
 
-1. **Locale-Based Routing**
-   - Use dynamic route segments with the `[locale]` parameter
-   - Support German (primary) and English (secondary) languages
-   - Default to German if no locale is specified
+- **messages/**: Contains JSON files with translations for each supported language
+- **i18n/**: Contains utilities for internationalization
+- **middleware.ts**: Root-level middleware for locale detection and routing
+- **next-intl.config.js**: Configuration for next-intl
 
-2. **Message Structure**
-   - Organize messages by features and pages with nested objects
-   - Include all UI text, labels, and content in message files
-   - Support pluralization and variables where needed
+#### 2. Locale-Based Routing
 
-3. **Formatting**
-   - Format dates according to locale conventions:
-     - German: DD.MM.YYYY (24.12.2023)
-     - English: MM/DD/YYYY (12/24/2023)
-   - Format numbers according to locale conventions:
-     - German: 1.234,56
-     - English: 1,234.56
-   - Format currencies with appropriate symbols:
-     - German: 42,50 €
-     - English: $42.50
+- Dynamic route segments with the `[locale]` parameter in the app directory
+- Support for German (primary) and English (secondary) languages
+- Middleware handling for redirecting root paths to default locale
+- Configuration for locale detection from Accept-Language headers and cookies
 
-4. **Language Switching**
-   - Provide a UI component for switching between languages
-   - Persist language preference in a cookie
-   - Support Accept-Language header for initial language detection
+#### 3. Implementation Pattern
 
-5. **Implementation Components**
-   - `IntlProvider.tsx`: React context provider for internationalization
-   - `middleware.ts`: Next.js middleware for locale-based routing
-   - `i18n-formatters.ts`: Utility functions for formatting dates and numbers
-   - `LanguageSwitcher.tsx`: UI component for changing the language
+```typescript
+// App Router internationalization pattern
+// 1. Configure middleware
+// middleware.ts
+import createMiddleware from 'next-intl/middleware';
+
+export default createMiddleware({
+  locales: ['en', 'de'],
+  defaultLocale: 'de',
+  localePrefix: 'always'
+});
+
+// 2. Create locale-aware layout
+// app/[locale]/layout.tsx
+export default async function LocaleLayout({
+  children,
+  params
+}: {
+  children: React.ReactNode;
+  params: { locale: string };
+}) {
+  const locale = params.locale;
+  const messages = await import(`../../messages/${locale}.json`);
+  
+  return (
+    <html lang={locale}>
+      <body>
+        <IntlProvider locale={locale} messages={messages}>
+          {children}
+        </IntlProvider>
+      </body>
+    </html>
+  );
+}
+
+// 3. Use translations in components
+// In component files
+'use client';
+import { useTranslations } from 'next-intl';
+
+export function MyComponent() {
+  const t = useTranslations('namespace');
+  
+  return <h1>{t('title')}</h1>;
+}
+```
+
+#### 4. Translation Organization
+
+Translations are organized in a hierarchical structure:
+
+```json
+{
+  "common": {
+    "actions": {
+      "submit": "Submit",
+      "cancel": "Cancel"
+    }
+  },
+  "patient": {
+    "dashboard": {
+      "title": "Patient Dashboard"
+    }
+  }
+}
+```
+
+#### 5. Formatting Conventions
+
+- Format dates according to locale conventions:
+  - German: DD.MM.YYYY (24.12.2023)
+  - English: MM/DD/YYYY (12/24/2023)
+- Format numbers according to locale conventions:
+  - German: 1.234,56
+  - English: 1,234.56
+- Format currencies with appropriate symbols:
+  - German: 42,50 €
+  - English: $42.50
+
+#### 6. Language Switching
+
+- Use the LanguageSwitcher component for toggling between languages
+- Preserve the current path when switching languages
+- Store language preference in a cookie for persistence
 
 ### Mock Data Structure
 
