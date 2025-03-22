@@ -108,7 +108,7 @@ Throughout the project, monitor these key risks:
 - **Action**: Update GitHub repo with landing page designs.
 
 ### Task 3.2: Landing Page Implementation (Days 12-14)
-- [ ] **Agent**: Frontend Development
+- [x] **Agent**: Frontend Development
 - **Task**: "Develop responsive landing page with animations based on design specifications."
 - **Deliverable**: Functional landing page with animations
 - **Deadline**: End of Day 14
