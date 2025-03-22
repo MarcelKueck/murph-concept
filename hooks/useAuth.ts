@@ -1,3 +1,4 @@
+'use client';
 /**
  * Authentication hook to handle user login, logout, and session state
  */

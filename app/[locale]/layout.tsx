@@ -3,6 +3,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '../../i18n/routing';
 import {Nunito, Montserrat} from 'next/font/google';
 import '../globals.css';
+import AuthProvider from '../../providers/AuthProvider'; // Add this import
 
 // Font definitions
 const nunito = Nunito({
@@ -42,7 +43,11 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`${nunito.variable} ${montserrat.variable} font-sans bg-white text-gray-800`}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <AuthProvider>
+          <NextIntlClientProvider>
+            {children}
+          </NextIntlClientProvider>
+        </AuthProvider>
       </body>
     </html>
   );

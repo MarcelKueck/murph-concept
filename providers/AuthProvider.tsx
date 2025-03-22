@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Auth Provider Component
  * Provides authentication context for the entire application

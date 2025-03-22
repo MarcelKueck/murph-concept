@@ -116,7 +116,7 @@ Throughout the project, monitor these key risks:
 - **Action**: Implement the landing page in your local environment.
 
 ### Task 3.3: Authentication Flows (Days 13-15)
-- [ ] **Agent**: Frontend Development
+- [x] **Agent**: Frontend Development
 - **Task**: "Create simple mock authentication interfaces for patient and medical student login/registration."
 - **Deliverable**: Login and registration flows for both user types
 - **Deadline**: End of Day 15
