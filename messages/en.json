@@ -17,7 +17,9 @@
       "upload": "Upload",
       "send": "Send",
       "getStarted": "Get Started",
-      "learnMore": "Learn More"
+      "learnMore": "Learn More",
+      "confirm": "Confirm",
+      "viewAll": "View All"
     },
     "status": {
       "loading": "Loading...",
@@ -36,7 +38,11 @@
       "required": "This field is required",
       "invalidEmail": "Please enter a valid email address",
       "invalidPassword": "Password must be at least 8 characters long",
-      "passwordMismatch": "Passwords do not match"
+      "passwordMismatch": "Passwords do not match",
+      "authRequired": "You must be logged in to perform this action"
+    },
+    "errors": {
+      "general": "An error occurred. Please try again."
     }
   },
   "navigation": {
@@ -186,28 +192,133 @@
     "dashboard": {
       "title": "Patient Dashboard",
       "welcome": "Welcome back, {name}",
+      "totalConsultations": "Total Consultations",
+      "documentsUploaded": "Documents Uploaded",
+      "activecConsultations": "Active Consultations",
       "consultationHistory": "Consultation History",
       "upcomingConsultations": "Upcoming Consultations",
-      "newConsultation": "New Consultation",
       "documents": "Your Documents",
       "uploadDocument": "Upload Document",
+      "quickActions": "Quick Actions",
+      "viewProfile": "View Profile",
+      "allConsultations": "All Consultations",
       "noConsultations": "You don't have any consultations yet",
-      "noDocuments": "You haven't uploaded any documents yet"
+      "startConsultation": "Start a new consultation to get medical guidance",
+      "noPastConsultations": "You don't have any past consultations",
+      "noDocuments": "You haven't uploaded any documents yet",
+      "uploadDocumentPrompt": "Upload documents to share with medical students during consultations",
+      "newConsultation": "New Consultation"
+    },
+    "consultations": {
+      "title": "Consultations",
+      "newConsultation": "New Consultation",
+      "noConsultations": "No consultations found",
+      "startConsultation": "Start a new consultation to get medical guidance",
+      "tabs": {
+        "active": "Active",
+        "past": "Past",
+        "all": "All"
+      },
+      "breadcrumb": {
+        "dashboard": "Dashboard",
+        "consultations": "Consultations"
+      }
+    },
+    "documents": {
+      "title": "Documents",
+      "uploadTitle": "Upload Document",
+      "uploadDocument": "Upload Document",
+      "uploadInstructions": "Upload documents to share with medical students during consultations. Supported formats include PDF, Word, Excel, and images.",
+      "uploadSuccess": "Document uploaded successfully",
+      "deleteSuccess": "Document deleted successfully",
+      "dropPrompt": "Drag and drop your file here, or",
+      "selectFile": "Select File",
+      "supportedFormats": "Supported formats: PDF, Word, Excel, JPG, PNG",
+      "fileRequired": "Please select a file to upload",
+      "searchDocuments": "Search documents...",
+      "noDocuments": "No documents found",
+      "uploadPrompt": "Upload documents to share with medical students during consultations",
+      "noMatchingDocuments": "No documents match your search",
+      "documentName": "Document Name",
+      "documentType": "Type",
+      "uploadDate": "Upload Date",
+      "actions": "Actions",
+      "viewAllDocuments": "View All Documents",
+      "backToDocuments": "Back to Documents",
+      "recentlyUploaded": "Recently Uploaded",
+      "documentsUploaded": "{count, plural, one {# document} other {# documents}} uploaded successfully",
+      "yourDocuments": "Your Documents",
+      "breadcrumb": {
+        "dashboard": "Dashboard",
+        "documents": "Documents",
+        "upload": "Upload"
+      }
     },
     "consultation": {
-      "new": {
-        "title": "Request a Consultation",
-        "step1": "Consultation Type",
-        "step2": "Details",
-        "step3": "Communication Preference",
-        "step4": "Review",
-        "type": {
-          "label": "What type of consultation do you need?",
+      "details": {
+        "title": "Consultation Details",
+        "status": "Status",
+        "type": "Type",
+        "primaryConcern": "Primary Concern",
+        "description": "Description",
+        "communicationChannel": "Communication Channel",
+        "scheduledFor": "Scheduled For",
+        "createdAt": "Requested On",
+        "assignedTo": "Assigned To",
+        "documents": "Related Documents",
+        "messages": "Messages",
+        "notFound": "Consultation not found",
+        "cancelSuccess": "Consultation cancelled successfully",
+        "typeLabels": {
           "labResult": "Lab Result Interpretation",
           "medication": "Medication Information",
           "imaging": "Imaging Result Explanation",
           "symptoms": "Symptom Assessment",
           "general": "General Health Question"
+        },
+        "channelLabels": {
+          "video": "Video Call",
+          "audio": "Audio Call",
+          "text": "Text Chat",
+          "async": "Asynchronous Messages"
+        },
+        "actions": {
+          "cancel": "Cancel Consultation",
+          "reschedule": "Reschedule",
+          "connect": "Connect Now",
+          "sendMessage": "Send Message",
+          "provideRating": "Rate Experience"
+        },
+        "breadcrumb": {
+          "dashboard": "Dashboard",
+          "consultations": "Consultations"
+        }
+      },
+      "new": {
+        "title": "Request a Consultation",
+        "step1": "What type of consultation do you need?",
+        "step2": "Tell us more about your concern",
+        "step3": "Choose your communication preference",
+        "step4": "Review your request",
+        "step1Title": "Type",
+        "step2Title": "Details",
+        "step3Title": "Communication",
+        "step4Title": "Review",
+        "typeRequired": "Please select a consultation type",
+        "detailsRequired": "Please provide details about your concern",
+        "communicationRequired": "Please select a communication method",
+        "type": {
+          "label": "What type of consultation do you need?",
+          "labResult": "Lab Result Interpretation",
+          "labResultDescription": "Get help understanding your blood work, urine tests, or other lab results",
+          "medication": "Medication Information",
+          "medicationDescription": "Learn about prescriptions, side effects, and interactions",
+          "imaging": "Imaging Result Explanation",
+          "imagingDescription": "Understand your X-ray, MRI, CT scan, or ultrasound results",
+          "symptoms": "Symptom Assessment",
+          "symptomsDescription": "Discuss symptoms you're experiencing and whether you should see a doctor",
+          "general": "General Health Question",
+          "generalDescription": "Ask about general health topics, prevention, or wellness"
         },
         "concern": {
           "label": "What is your primary concern?",
@@ -232,41 +343,29 @@
         "schedule": {
           "label": "When would you like to schedule this consultation?",
           "asap": "As soon as possible",
-          "specific": "Specific date and time"
+          "specific": "Specific date and time",
+          "date": "Date",
+          "time": "Time"
         },
         "review": {
           "title": "Review Your Request",
           "type": "Consultation Type:",
           "concern": "Primary Concern:",
+          "description": "Description:",
           "communication": "Communication Method:",
           "schedule": "Scheduling Preference:",
           "documents": "Attached Documents:",
-          "submit": "Submit Request"
+          "submit": "Submit Request",
+          "confirmPrompt": "Please review your consultation request details and submit when ready."
         },
         "success": {
-          "title": "Consultation Request Submitted",
-          "message": "Your consultation request has been submitted successfully. We'll notify you when a medical student is assigned.",
-          "backToDashboard": "Back to Dashboard"
-        }
-      },
-      "details": {
-        "title": "Consultation Details",
-        "status": "Status",
-        "type": "Type",
-        "primaryConcern": "Primary Concern",
-        "description": "Description",
-        "communicationChannel": "Communication Channel",
-        "scheduledFor": "Scheduled For",
-        "createdAt": "Requested On",
-        "assignedTo": "Assigned To",
-        "documents": "Related Documents",
-        "messages": "Messages",
-        "actions": {
-          "cancel": "Cancel Consultation",
-          "reschedule": "Reschedule",
-          "connect": "Connect Now",
-          "sendMessage": "Send Message",
-          "provideRating": "Rate Experience"
+          "title": "Success!",
+          "message": "Your consultation request has been submitted successfully. We'll notify you when a medical student is assigned."
+        },
+        "breadcrumb": {
+          "dashboard": "Dashboard",
+          "consultations": "Consultations",
+          "new": "New Request"
         }
       }
     }
@@ -316,7 +415,10 @@
       "attach": "Attach file",
       "typing": "{name} is typing...",
       "today": "Today",
-      "yesterday": "Yesterday"
+      "yesterday": "Yesterday",
+      "waitingForAssignment": "Waiting for a medical student to be assigned",
+      "consultationNotStarted": "The consultation hasn't started yet",
+      "noMessages": "No messages yet"
     },
     "video": {
       "connecting": "Connecting...",

@@ -1,4 +1,5 @@
 'use client';
+
 /**
  * Authentication hook to handle user login, logout, and session state
  */
@@ -46,20 +47,25 @@ export const useAuth = (): UseAuthReturn => {
   // Check for existing session on mount
   useEffect(() => {
     const checkAuth = async () => {
-      // In a real app, this would check for a token in localStorage or cookies
-      // and validate it with the backend
-      const storedUser = localStorage.getItem('murph_user');
-      
-      if (storedUser) {
-        try {
-          setUser(JSON.parse(storedUser));
-        } catch (error) {
-          console.error('Failed to parse stored user:', error);
-          localStorage.removeItem('murph_user');
+      setLoading(true);
+      try {
+        // In a real app, this would check for a token in localStorage or cookies
+        // and validate it with the backend
+        const storedUser = localStorage.getItem('murph_user');
+        
+        if (storedUser) {
+          try {
+            setUser(JSON.parse(storedUser));
+          } catch (error) {
+            console.error('Failed to parse stored user:', error);
+            localStorage.removeItem('murph_user');
+          }
         }
+      } catch (error) {
+        console.error('Authentication check failed:', error);
+      } finally {
+        setLoading(false);
       }
-      
-      setLoading(false);
     };
 
     checkAuth();
@@ -75,12 +81,20 @@ export const useAuth = (): UseAuthReturn => {
       // Mock API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // For demo purposes, accept any email/password combination
+      // For demo purposes, determine role based on email domain
+      const role = email.includes('med-uni') ? 'MEDICAL_STUDENT' : 'PATIENT';
+      
+      // Get name from email (before the @ symbol)
+      const name = email.split('@')[0].split('.').map(part => 
+        part.charAt(0).toUpperCase() + part.slice(1)
+      ).join(' ');
+      
+      // Create a mock user
       const mockUser: User = {
         id: 'user_' + Date.now(),
-        name: email.split('@')[0],
+        name: name || 'Test User',
         email,
-        role: email.includes('med-uni') ? 'MEDICAL_STUDENT' : 'PATIENT'
+        role
       };
       
       setUser(mockUser);

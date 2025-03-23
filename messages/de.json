@@ -17,7 +17,9 @@
       "upload": "Hochladen",
       "send": "Senden",
       "getStarted": "Jetzt starten",
-      "learnMore": "Mehr erfahren"
+      "learnMore": "Mehr erfahren",
+      "confirm": "Bestätigen",
+      "viewAll": "Alle anzeigen"
     },
     "status": {
       "loading": "Wird geladen...",
@@ -36,7 +38,11 @@
       "required": "Dieses Feld ist erforderlich",
       "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
       "invalidPassword": "Das Passwort muss mindestens 8 Zeichen lang sein",
-      "passwordMismatch": "Die Passwörter stimmen nicht überein"
+      "passwordMismatch": "Die Passwörter stimmen nicht überein",
+      "authRequired": "Sie müssen angemeldet sein, um diese Aktion auszuführen"
+    },
+    "errors": {
+      "general": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
     }
   },
   "navigation": {
@@ -186,32 +192,137 @@
     "dashboard": {
       "title": "Patienten-Dashboard",
       "welcome": "Willkommen zurück, {name}",
+      "totalConsultations": "Gesamtanzahl der Beratungen",
+      "documentsUploaded": "Hochgeladene Dokumente",
+      "activecConsultations": "Aktive Beratungen",
       "consultationHistory": "Beratungsverlauf",
       "upcomingConsultations": "Anstehende Beratungen",
-      "newConsultation": "Neue Beratung",
       "documents": "Ihre Dokumente",
       "uploadDocument": "Dokument hochladen",
+      "quickActions": "Schnellaktionen",
+      "viewProfile": "Profil anzeigen",
+      "allConsultations": "Alle Beratungen",
       "noConsultations": "Sie haben noch keine Beratungen",
-      "noDocuments": "Sie haben noch keine Dokumente hochgeladen"
+      "startConsultation": "Starten Sie eine neue Beratung, um medizinische Beratung zu erhalten",
+      "noPastConsultations": "Sie haben keine vergangenen Beratungen",
+      "noDocuments": "Sie haben noch keine Dokumente hochgeladen",
+      "uploadDocumentPrompt": "Laden Sie Dokumente hoch, um sie während der Beratungen mit Medizinstudenten zu teilen",
+      "newConsultation": "Neue Beratung"
+    },
+    "consultations": {
+      "title": "Beratungen",
+      "newConsultation": "Neue Beratung",
+      "noConsultations": "Keine Beratungen gefunden",
+      "startConsultation": "Starten Sie eine neue Beratung, um medizinische Beratung zu erhalten",
+      "tabs": {
+        "active": "Aktiv",
+        "past": "Vergangen",
+        "all": "Alle"
+      },
+      "breadcrumb": {
+        "dashboard": "Dashboard",
+        "consultations": "Beratungen"
+      }
+    },
+    "documents": {
+      "title": "Dokumente",
+      "uploadTitle": "Dokument hochladen",
+      "uploadDocument": "Dokument hochladen",
+      "uploadInstructions": "Laden Sie Dokumente hoch, um sie während der Beratungen mit Medizinstudenten zu teilen. Unterstützte Formate sind PDF, Word, Excel und Bilder.",
+      "uploadSuccess": "Dokument erfolgreich hochgeladen",
+      "deleteSuccess": "Dokument erfolgreich gelöscht",
+      "dropPrompt": "Ziehen Sie Ihre Datei hierher, oder",
+      "selectFile": "Datei auswählen",
+      "supportedFormats": "Unterstützte Formate: PDF, Word, Excel, JPG, PNG",
+      "fileRequired": "Bitte wählen Sie eine Datei zum Hochladen aus",
+      "searchDocuments": "Dokumente durchsuchen...",
+      "noDocuments": "Keine Dokumente gefunden",
+      "uploadPrompt": "Laden Sie Dokumente hoch, um sie während der Beratungen mit Medizinstudenten zu teilen",
+      "noMatchingDocuments": "Keine Dokumente entsprechen Ihrer Suche",
+      "documentName": "Dokumentname",
+      "documentType": "Typ",
+      "uploadDate": "Hochladedatum",
+      "actions": "Aktionen",
+      "viewAllDocuments": "Alle Dokumente anzeigen",
+      "backToDocuments": "Zurück zu Dokumenten",
+      "recentlyUploaded": "Kürzlich hochgeladen",
+      "documentsUploaded": "{count, plural, one {# Dokument} other {# Dokumente}} erfolgreich hochgeladen",
+      "yourDocuments": "Ihre Dokumente",
+      "breadcrumb": {
+        "dashboard": "Dashboard",
+        "documents": "Dokumente",
+        "upload": "Hochladen"
+      }
     },
     "consultation": {
-      "new": {
-        "title": "Beratung anfragen",
-        "step1": "Beratungstyp",
-        "step2": "Details",
-        "step3": "Kommunikationspräferenz",
-        "step4": "Überprüfung",
-        "type": {
-          "label": "Welche Art von Beratung benötigen Sie?",
+      "details": {
+        "title": "Beratungsdetails",
+        "status": "Status",
+        "type": "Typ",
+        "primaryConcern": "Hauptanliegen",
+        "description": "Beschreibung",
+        "communicationChannel": "Kommunikationskanal",
+        "scheduledFor": "Geplant für",
+        "createdAt": "Angefragt am",
+        "assignedTo": "Zugewiesen an",
+        "documents": "Zugehörige Dokumente",
+        "messages": "Nachrichten",
+        "notFound": "Beratung nicht gefunden",
+        "cancelSuccess": "Beratung erfolgreich abgebrochen",
+        "typeLabels": {
           "labResult": "Interpretation von Laborergebnissen",
           "medication": "Informationen zu Medikamenten",
           "imaging": "Erklärung von Bildgebungsergebnissen",
           "symptoms": "Symptombewertung",
           "general": "Allgemeine Gesundheitsfrage"
         },
+        "channelLabels": {
+          "video": "Videoanruf",
+          "audio": "Audioanruf",
+          "text": "Text-Chat",
+          "async": "Asynchrone Nachrichten"
+        },
+        "actions": {
+          "cancel": "Beratung abbrechen",
+          "reschedule": "Neu planen",
+          "connect": "Jetzt verbinden",
+          "sendMessage": "Nachricht senden",
+          "provideRating": "Bewertung abgeben"
+        },
+        "breadcrumb": {
+          "dashboard": "Dashboard",
+          "consultations": "Beratungen"
+        }
+      },
+      "new": {
+        "title": "Beratung anfragen",
+        "step1": "Welche Art von Beratung benötigen Sie?",
+        "step2": "Erzählen Sie uns mehr über Ihr Anliegen",
+        "step3": "Wählen Sie Ihre Kommunikationspräferenz",
+        "step4": "Überprüfen Sie Ihre Anfrage",
+        "step1Title": "Typ",
+        "step2Title": "Details",
+        "step3Title": "Kommunikation",
+        "step4Title": "Überprüfung",
+        "typeRequired": "Bitte wählen Sie einen Beratungstyp aus",
+        "detailsRequired": "Bitte geben Sie Details zu Ihrem Anliegen an",
+        "communicationRequired": "Bitte wählen Sie eine Kommunikationsmethode aus",
+        "type": {
+          "label": "Welche Art von Beratung benötigen Sie?",
+          "labResult": "Interpretation von Laborergebnissen",
+          "labResultDescription": "Hilfe beim Verstehen Ihrer Bluttests, Urintests oder anderer Laborergebnisse",
+          "medication": "Informationen zu Medikamenten",
+          "medicationDescription": "Erfahren Sie mehr über Verschreibungen, Nebenwirkungen und Wechselwirkungen",
+          "imaging": "Erklärung von Bildgebungsergebnissen",
+          "imagingDescription": "Verstehen Sie Ihre Röntgen-, MRT-, CT- oder Ultraschallergebnisse",
+          "symptoms": "Symptombewertung",
+          "symptomsDescription": "Besprechen Sie Symptome, die Sie erleben, und ob Sie einen Arzt aufsuchen sollten",
+          "general": "Allgemeine Gesundheitsfrage",
+          "generalDescription": "Fragen Sie zu allgemeinen Gesundheitsthemen, Prävention oder Wellness"
+        },
         "concern": {
           "label": "Was ist Ihr Hauptanliegen?",
-          "placeholder": "z.B. Verständnis meiner Blutergebnisse"
+          "placeholder": "z.B. Verstehen meiner Blutergebnisse"
         },
         "description": {
           "label": "Bitte beschreiben Sie Ihr Anliegen detailliert",
@@ -232,41 +343,29 @@
         "schedule": {
           "label": "Wann möchten Sie diese Beratung planen?",
           "asap": "So bald wie möglich",
-          "specific": "Bestimmtes Datum und Uhrzeit"
+          "specific": "Bestimmtes Datum und Uhrzeit",
+          "date": "Datum",
+          "time": "Uhrzeit"
         },
         "review": {
           "title": "Überprüfen Sie Ihre Anfrage",
           "type": "Beratungstyp:",
           "concern": "Hauptanliegen:",
+          "description": "Beschreibung:",
           "communication": "Kommunikationsmethode:",
           "schedule": "Zeitplanung:",
           "documents": "Angehängte Dokumente:",
-          "submit": "Anfrage einreichen"
+          "submit": "Anfrage einreichen",
+          "confirmPrompt": "Bitte überprüfen Sie Ihre Beratungsanfrage und reichen Sie sie ein, wenn Sie bereit sind."
         },
         "success": {
-          "title": "Beratungsanfrage eingereicht",
-          "message": "Ihre Beratungsanfrage wurde erfolgreich eingereicht. Wir benachrichtigen Sie, wenn ein Medizinstudent zugewiesen wurde.",
-          "backToDashboard": "Zurück zum Dashboard"
-        }
-      },
-      "details": {
-        "title": "Beratungsdetails",
-        "status": "Status",
-        "type": "Typ",
-        "primaryConcern": "Hauptanliegen",
-        "description": "Beschreibung",
-        "communicationChannel": "Kommunikationskanal",
-        "scheduledFor": "Geplant für",
-        "createdAt": "Angefragt am",
-        "assignedTo": "Zugewiesen an",
-        "documents": "Zugehörige Dokumente",
-        "messages": "Nachrichten",
-        "actions": {
-          "cancel": "Beratung abbrechen",
-          "reschedule": "Neu planen",
-          "connect": "Jetzt verbinden",
-          "sendMessage": "Nachricht senden",
-          "provideRating": "Erfahrung bewerten"
+          "title": "Erfolg!",
+          "message": "Ihre Beratungsanfrage wurde erfolgreich eingereicht. Wir benachrichtigen Sie, wenn ein Medizinstudent zugewiesen wurde."
+        },
+        "breadcrumb": {
+          "dashboard": "Dashboard",
+          "consultations": "Beratungen",
+          "new": "Neue Anfrage"
         }
       }
     }
@@ -316,7 +415,10 @@
       "attach": "Datei anhängen",
       "typing": "{name} schreibt...",
       "today": "Heute",
-      "yesterday": "Gestern"
+      "yesterday": "Gestern",
+      "waitingForAssignment": "Warten auf die Zuweisung eines Medizinstudenten",
+      "consultationNotStarted": "Die Beratung hat noch nicht begonnen",
+      "noMessages": "Noch keine Nachrichten"
     },
     "video": {
       "connecting": "Verbindung wird hergestellt...",
