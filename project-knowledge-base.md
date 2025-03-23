@@ -13,6 +13,63 @@
 - `landing-page-design.md`: Detailed specifications for landing page layout and animations
 - `patient-experience-implementation.md`: Detailed overview of patient dashboard and workflows
 
+## Project Directory Structure
+
+### Next.js Application Structure
+- `app/`: Next.js App Router
+  - `globals.css`: Global stylesheet
+  - `[locale]/`: Locale-based routing
+    - `page.tsx`: Landing page
+    - `auth/`: Authentication pages (login, register)
+    - `patient/`: Patient routes (dashboard, consultations, documents, profile)
+    - `medical-student/`: Medical student routes
+    - `test/`: Component testing page
+
+### Component Library
+- `components/`: UI and feature components
+  - `ui/`: Reusable UI components
+    - `avatar/`: User avatars and profiles
+    - `buttons/`: Button variants and styles
+    - `cards/`: Card components for various content
+    - `communication/`: Chat, video, and audio interfaces
+    - `elements/`: Basic UI elements (dividers, stats)
+    - `feedback/`: Rating and feedback collection
+    - `forms/`: Form controls and input elements
+    - `layout/`: Layout components and containers
+    - `modal/`: Modals, alerts, and dialogs
+    - `navigation/`: Navigation elements
+    - `status/`: Loading and status indicators
+  - `patient/`: Patient-specific components
+
+### Internationalization
+- `i18n/`: Internationalization utilities
+- `messages/`: Translation files
+  - `en.json`: English translations
+  - `de.json`: German translations
+- `middleware.ts`: Handles locale detection and routing
+
+### State and Data Management
+- `hooks/`: Custom React hooks
+  - `useAuth.ts`: Authentication hook
+  - `useConsultations.ts`: Consultation management
+  - `useDocuments.ts`: Document management
+- `providers/`: React context providers
+  - `AuthProvider.tsx`: Authentication context
+  - `IntlProvider.tsx`: Internationalization provider
+  - `ThemeProvider.tsx`: Theme context
+
+### Mock Data
+- `mock-data/`: JSON files for demonstration
+  - `consultations/`: Consultation data
+  - `documents/`: Document data
+  - `messages/`: Message data
+  - `users/`: Patient and medical student profiles
+
+### Utilities and Configuration
+- `lib/`: Utility functions
+- `public/`: Static assets
+- `eslint.config.mjs`, `postcss.config.js`, `tailwind.config.js`: Configuration files
+
 ## Knowledge Exchange Workflow
 
 1. **GitHub Repository**: All markdown files are maintained in the GitHub repository
@@ -40,6 +97,7 @@
 | Consultation Flow         | 🟢 Complete    | Frontend Dev     | 2025-03-26   |
 | Document Management       | 🟢 Complete    | Frontend Dev     | 2025-03-26   |
 | Patient Profile           | 🟢 Complete    | Frontend Dev     | 2025-03-26   |
+| Directory Structure       | 🟢 Complete    | Frontend Dev     | 2025-03-27   |
 | Medical Student Dashboard | 🟡 Planned     | Frontend Dev     | YYYY-MM-DD   |
 | Communication Interfaces  | 🟠 In Progress | Frontend Dev     | 2025-03-25   |
 | Deployment                | 🟡 Planned     | Testing & Deploy | YYYY-MM-DD   |
