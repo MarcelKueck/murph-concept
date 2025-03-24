@@ -42,7 +42,10 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${nunito.variable} ${montserrat.variable} font-sans bg-white text-gray-800`}>
+      <body
+        className={`${nunito.variable} ${montserrat.variable} font-sans bg-white text-gray-800`}
+        suppressHydrationWarning={true}
+      >
         <AuthProvider>
           <NextIntlClientProvider>
             {children}
