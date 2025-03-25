@@ -17,16 +17,31 @@ interface ConsultationRequestCardProps {
    */
   onDecline: () => void;
   /**
-   * Loading state
+   * Loading state for accept action 
    */
-  loading?: boolean;
+  acceptLoading?: boolean;
+  /**
+   * Loading state for decline action
+   */
+  declineLoading?: boolean;
+  /**
+   * Optional click handler for viewing details
+   */
+  onClick?: () => void;
+  /**
+   * Whether to stack the buttons vertically
+   */
+  stackButtons?: boolean;
 }
 
 export const ConsultationRequestCard: React.FC<ConsultationRequestCardProps> = ({
   consultation,
   onAccept,
   onDecline,
-  loading = false,
+  acceptLoading = false,
+  declineLoading = false,
+  onClick,
+  stackButtons = false
 }) => {
   // Consultation type label
   const getConsultationTypeLabel = (type: string) => {
@@ -89,46 +104,21 @@ export const ConsultationRequestCard: React.FC<ConsultationRequestCardProps> = (
     }
   };
   
-  // Get channel icon
-  const getChannelIcon = (channel: string) => {
-    switch (channel) {
-      case 'video':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
-        );
-      case 'audio':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-          </svg>
-        );
-      case 'text':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-          </svg>
-        );
-      case 'async':
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-          </svg>
-        );
-      default:
-        return (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-          </svg>
-        );
+  // Handle card click
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Only handle click if onClick is provided and the click wasn't on a button
+    if (onClick && !(e.target as HTMLElement).closest('button')) {
+      onClick();
     }
   };
   
   return (
-    <div className="bg-white border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition p-4">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2">
+    <div 
+      className={`bg-white border border-neutral-200 rounded-lg shadow-sm hover:shadow-md transition p-4 ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick ? handleCardClick : undefined}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="md:col-span-2">
           <div className="flex items-start mb-2">
             <span className="inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary-100 text-primary-800 mr-2">
               {getTypeIcon(consultation.type)}
@@ -173,27 +163,33 @@ export const ConsultationRequestCard: React.FC<ConsultationRequestCardProps> = (
           </div>
         </div>
         
-        <div className="flex flex-col justify-between lg:border-l lg:pl-4">
+        <div className="md:border-l md:pl-4 flex flex-col justify-between">
           <div className="mb-4">
             <p className="text-sm font-medium text-neutral-700 mb-1">Patient Name</p>
             <p className="font-medium text-neutral-900">Maria Schmidt</p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className={`flex ${stackButtons ? 'flex-col' : 'flex-col sm:flex-row'} gap-2 pr-2`}>
             <Button
               variant="secondary"
-              onClick={onDecline}
-              disabled={loading}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDecline();
+              }}
+              disabled={acceptLoading || declineLoading}
               fullWidth
             >
-              Decline
+              {declineLoading ? "Declining..." : "Decline"}
             </Button>
             <Button
-              onClick={onAccept}
-              disabled={loading}
+              onClick={(e) => {
+                e.stopPropagation();
+                onAccept();
+              }}
+              disabled={acceptLoading || declineLoading}
               fullWidth
             >
-              {loading ? "Accepting..." : "Accept"}
+              {acceptLoading ? "Accepting..." : "Accept"}
             </Button>
           </div>
         </div>

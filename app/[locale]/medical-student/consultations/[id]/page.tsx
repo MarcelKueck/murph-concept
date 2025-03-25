@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { Link } from '../../../../../i18n/navigation';
 import { useAuthContext } from '../../../../../providers/AuthProvider';
 import useMedicalStudentConsultations from '../../../../../hooks/useMedicalStudentConsultations';
 import useDocuments from '../../../../../hooks/useDocuments';
@@ -25,18 +24,25 @@ export default function MedicalStudentConsultationDetailPage() {
   const params = useParams();
   const { user } = useAuthContext();
   
+  // Navigation tracking
+  const [redirected, setRedirected] = useState(false);
+  
+  // Consultation ID ref and state
+  const consultationId = params?.id as string;
+  const loadedRef = useRef(false);
+  
   // Get consultations data
   const { 
     assignedConsultations,
     availableConsultations,
     completedConsultations,
-    loading, 
-    error, 
+    loading: consultationsLoading, 
+    error: consultationsError, 
     updateConsultationStatus,
     fetchConsultations
   } = useMedicalStudentConsultations();
   
-  const { documents, fetchDocuments } = useDocuments();
+  const { documents, loading: documentsLoading, fetchDocuments } = useDocuments();
   
   // Consultation state
   const [consultation, setConsultation] = useState<any>(null);
@@ -49,53 +55,90 @@ export default function MedicalStudentConsultationDetailPage() {
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
   
-  // Get the consultation ID from the URL
-  const consultationId = params?.id as string;
-  
-  // Fetch consultation data
+  // Fetch data once on component mount
   useEffect(() => {
-    if (user?.id) {
-      fetchConsultations(user.id);
-      fetchDocuments(user.id);
+    // Prevent multiple fetches on same consultation
+    if (loadedRef.current) {
+      return;
     }
+    
+    if (!user?.id) {
+      return;
+    }
+    
+    // Mark as loaded to prevent future fetches for this consultation
+    loadedRef.current = true;
+    
+    // Fetch data
+    fetchConsultations(user.id);
+    fetchDocuments(user.id);
   }, [user?.id, fetchConsultations, fetchDocuments]);
   
-  // Find the current consultation and related documents
+  // Find and set consultation data
   useEffect(() => {
-    if (consultationId) {
-      // Check in all consultation lists
-      const allConsultations = [
-        ...availableConsultations,
-        ...assignedConsultations,
-        ...completedConsultations
-      ];
-      
-      const foundConsultation = allConsultations.find(cons => cons.id === consultationId);
-      
-      if (foundConsultation) {
-        setConsultation(foundConsultation);
-        
-        // Set patient info (mock data)
-        setPatientInfo({
-          id: foundConsultation.patientId,
-          name: 'Maria Schmidt',
-          age: 42,
-          gender: 'Female'
-        });
-        
-        // Set initial notes (mock data)
-        setNotes(foundConsultation.medicalStudentNotes || '');
-        
-        // Find related documents
-        if (foundConsultation.documents?.length > 0 && documents.length > 0) {
-          const related = documents.filter(doc => 
-            foundConsultation.documents.includes(doc.id)
-          );
-          setRelatedDocuments(related);
-        }
-      }
+    if (!consultationId || !availableConsultations?.length && !assignedConsultations?.length && !completedConsultations?.length) {
+      return;
     }
-  }, [consultationId, availableConsultations, assignedConsultations, completedConsultations, documents]);
+    
+    // Skip if we already have consultation data
+    if (consultation?.id === consultationId) {
+      return;
+    }
+    
+    // Check in all consultation lists
+    const allConsultations = [
+      ...(availableConsultations || []),
+      ...(assignedConsultations || []),
+      ...(completedConsultations || [])
+    ];
+    
+    const foundConsultation = allConsultations.find(cons => cons.id === consultationId);
+    
+    if (foundConsultation) {
+      setConsultation(foundConsultation);
+      
+      // Set patient info (mock data)
+      setPatientInfo({
+        id: foundConsultation.patientId,
+        name: 'Maria Schmidt',
+        age: 42,
+        gender: 'Female'
+      });
+      
+      // Set initial notes (mock data)
+      setNotes(foundConsultation.medicalStudentNotes || '');
+    }
+  }, [consultationId, availableConsultations, assignedConsultations, completedConsultations, consultation]);
+  
+  // Find related documents
+  useEffect(() => {
+    if (!consultation?.documents?.length || !documents?.length) {
+      return;
+    }
+    
+    // Skip if we already have documents loaded
+    if (relatedDocuments.length > 0) {
+      return;
+    }
+    
+    const related = documents.filter(doc => 
+      consultation.documents.includes(doc.id)
+    );
+    
+    setRelatedDocuments(related);
+  }, [consultation, documents, relatedDocuments.length]);
+  
+  // Safe navigation function to avoid race conditions
+  const safeNavigate = (path: string) => {
+    // Skip navigation if we're already handling redirects
+    if (redirected) return;
+    
+    // Use setTimeout to break the current execution context
+    // This prevents navigation from happening during a render
+    setTimeout(() => {
+      router.push(path);
+    }, 0);
+  };
   
   // Handle status update
   const handleStatusUpdate = async (newStatus: 'SCHEDULED' | 'IN_PROGRESS' | 'RESOLVED' | 'CLOSED') => {
@@ -205,7 +248,7 @@ export default function MedicalStudentConsultationDetailPage() {
   };
   
   // Loading state
-  if (loading || !user) {
+  if (consultationsLoading || documentsLoading || !user) {
     return (
       <PageContainer>
         <div className="flex justify-center items-center h-64">
@@ -216,13 +259,13 @@ export default function MedicalStudentConsultationDetailPage() {
   }
   
   // Error state
-  if (error || !consultation) {
+  if (consultationsError || !consultation) {
     return (
       <PageContainer>
         <div className="flex justify-center items-center h-64">
           <Alert
             variant="error"
-            message={error?.message || "Consultation not found"}
+            message={consultationsError?.message || "Consultation not found"}
           />
         </div>
       </PageContainer>

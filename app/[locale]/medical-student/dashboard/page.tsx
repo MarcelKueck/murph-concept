@@ -39,7 +39,8 @@ export default function MedicalStudentDashboardPage() {
   } = useMedicalStudentConsultations();
   
   // UI states
-  const [actionLoading, setActionLoading] = useState(false);
+  const [acceptingConsultationId, setAcceptingConsultationId] = useState<string | null>(null);
+  const [decliningConsultationId, setDecliningConsultationId] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
   
@@ -79,9 +80,7 @@ export default function MedicalStudentDashboardPage() {
   
   // Handle accept consultation
   const handleAcceptConsultation = async (consultationId: string) => {
-    if (actionLoading) return; // Prevent multiple simultaneous actions
-    
-    setActionLoading(true);
+    setAcceptingConsultationId(consultationId);
     setActionError(null);
     setActionSuccess(null);
     
@@ -92,15 +91,13 @@ export default function MedicalStudentDashboardPage() {
       setActionError("Error accepting consultation");
       console.error('Error accepting consultation:', err);
     } finally {
-      setActionLoading(false);
+      setAcceptingConsultationId(null);
     }
   };
   
   // Handle decline consultation
   const handleDeclineConsultation = async (consultationId: string) => {
-    if (actionLoading) return; // Prevent multiple simultaneous actions
-    
-    setActionLoading(true);
+    setDecliningConsultationId(consultationId);
     setActionError(null);
     setActionSuccess(null);
     
@@ -111,7 +108,7 @@ export default function MedicalStudentDashboardPage() {
       setActionError("Error declining consultation");
       console.error('Error declining consultation:', err);
     } finally {
-      setActionLoading(false);
+      setDecliningConsultationId(null);
     }
   };
   
@@ -283,7 +280,10 @@ export default function MedicalStudentDashboardPage() {
                       consultation={consultation}
                       onAccept={() => handleAcceptConsultation(consultation.id)}
                       onDecline={() => handleDeclineConsultation(consultation.id)}
-                      loading={actionLoading}
+                      acceptLoading={acceptingConsultationId === consultation.id}
+                      declineLoading={decliningConsultationId === consultation.id}
+                      onClick={() => safeNavigate(`/medical-student/consultations/${consultation.id}`)}
+                      stackButtons={true}
                     />
                   ))}
                 </div>

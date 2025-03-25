@@ -1,7 +1,7 @@
 /**
  * Hook for managing medical student consultations
  */
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 // Type definitions
 interface Consultation {
@@ -78,8 +78,9 @@ const useMedicalStudentConsultations = (): UseMedicalStudentConsultationsReturn 
 
   /**
    * Fetch consultations for a medical student
+   * Using useCallback to prevent infinite loops
    */
-  const fetchConsultations = async (medicalStudentId: string): Promise<void> => {
+  const fetchConsultations = useCallback(async (medicalStudentId: string): Promise<void> => {
     setLoading(true);
     setError(null);
     
@@ -238,12 +239,12 @@ const useMedicalStudentConsultations = (): UseMedicalStudentConsultationsReturn 
     } finally {
       setLoading(false);
     }
-  };
+  }, []); // Empty dependency array to prevent re-creation of this function
 
   /**
    * Accept a consultation request
    */
-  const acceptConsultation = async (consultationId: string): Promise<void> => {
+  const acceptConsultation = useCallback(async (consultationId: string): Promise<void> => {
     try {
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -271,12 +272,12 @@ const useMedicalStudentConsultations = (): UseMedicalStudentConsultationsReturn 
       console.error('Error accepting consultation:', err);
       throw error;
     }
-  };
+  }, [availableConsultations]); // Depend on availableConsultations
 
   /**
    * Decline a consultation request
    */
-  const declineConsultation = async (consultationId: string): Promise<void> => {
+  const declineConsultation = useCallback(async (consultationId: string): Promise<void> => {
     try {
       // In a real app, this would be an API call
       await new Promise(resolve => setTimeout(resolve, 500));
@@ -288,12 +289,12 @@ const useMedicalStudentConsultations = (): UseMedicalStudentConsultationsReturn 
       console.error('Error declining consultation:', err);
       throw error;
     }
-  };
+  }, []);  // No dependencies needed
 
   /**
    * Update consultation status
    */
-  const updateConsultationStatus = async (
+  const updateConsultationStatus = useCallback(async (
     consultationId: string, 
     status: 'SCHEDULED' | 'IN_PROGRESS' | 'RESOLVED' | 'CLOSED'
   ): Promise<void> => {
@@ -334,7 +335,7 @@ const useMedicalStudentConsultations = (): UseMedicalStudentConsultationsReturn 
       console.error('Error updating consultation status:', err);
       throw error;
     }
-  };
+  }, [assignedConsultations, completedConsultations]); // Depend on both consultation arrays
 
   return {
     availableConsultations,

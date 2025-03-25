@@ -29,6 +29,9 @@ export default function MedicalStudentConsultationsPage() {
   // Get auth context
   const auth = useAuthContext();
   
+  // Navigation tracking
+  const [redirected, setRedirected] = useState(false);
+  
   // Get consultations data
   const { 
     availableConsultations, 
@@ -45,7 +48,8 @@ export default function MedicalStudentConsultationsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   
   // Action states
-  const [actionLoading, setActionLoading] = useState(false);
+  const [acceptingConsultationId, setAcceptingConsultationId] = useState<string | null>(null);
+  const [decliningConsultationId, setDecliningConsultationId] = useState<string | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
   
@@ -57,19 +61,25 @@ export default function MedicalStudentConsultationsPage() {
     
     // If user is not authenticated and we're not loading, redirect to login
     if (!auth.user && !auth.loading) {
-      router.push('/auth/login');
+      if (!redirected) {
+        setRedirected(true);
+        router.replace('/auth/login');
+      }
     }
     
     // If user is authenticated but not a medical student, redirect to patient dashboard
     if (auth.user && auth.user.role !== 'MEDICAL_STUDENT' && !auth.loading) {
-      router.push('/patient/dashboard');
+      if (!redirected) {
+        setRedirected(true);
+        router.replace('/patient/dashboard');
+      }
     }
     
     // Fetch consultations if user is authenticated
     if (auth.user && auth.user.id) {
       fetchConsultations(auth.user.id);
     }
-  }, [auth, router, fetchConsultations]);
+  }, [auth, router, fetchConsultations, redirected]);
   
   // Handle tab change
   const handleTabChange = (tabId: string) => {
@@ -85,9 +95,21 @@ export default function MedicalStudentConsultationsPage() {
     window.history.pushState({}, '', url.toString());
   };
   
+  // Safe navigation function to avoid race conditions
+  const safeNavigate = (path: string) => {
+    // Skip navigation if we're already handling redirects
+    if (redirected) return;
+    
+    // Use setTimeout to break the current execution context
+    // This prevents navigation from happening during a render
+    setTimeout(() => {
+      router.push(path);
+    }, 0);
+  };
+  
   // Handle accept consultation
   const handleAcceptConsultation = async (consultationId: string) => {
-    setActionLoading(true);
+    setAcceptingConsultationId(consultationId);
     setActionError(null);
     setActionSuccess(null);
     
@@ -98,13 +120,13 @@ export default function MedicalStudentConsultationsPage() {
       setActionError("Error accepting consultation");
       console.error('Error accepting consultation:', err);
     } finally {
-      setActionLoading(false);
+      setAcceptingConsultationId(null);
     }
   };
   
   // Handle decline consultation
   const handleDeclineConsultation = async (consultationId: string) => {
-    setActionLoading(true);
+    setDecliningConsultationId(consultationId);
     setActionError(null);
     setActionSuccess(null);
     
@@ -115,7 +137,7 @@ export default function MedicalStudentConsultationsPage() {
       setActionError("Error declining consultation");
       console.error('Error declining consultation:', err);
     } finally {
-      setActionLoading(false);
+      setDecliningConsultationId(null);
     }
   };
   
@@ -239,7 +261,9 @@ export default function MedicalStudentConsultationsPage() {
                 consultation={consultation}
                 onAccept={() => handleAcceptConsultation(consultation.id)}
                 onDecline={() => handleDeclineConsultation(consultation.id)}
-                loading={actionLoading}
+                acceptLoading={acceptingConsultationId === consultation.id}
+                declineLoading={decliningConsultationId === consultation.id}
+                onClick={() => safeNavigate(`/medical-student/consultations/${consultation.id}`)}
               />
             ))}
             
@@ -247,7 +271,7 @@ export default function MedicalStudentConsultationsPage() {
               <AssignedConsultationCard
                 key={consultation.id}
                 consultation={consultation}
-                onClick={() => router.push(`/medical-student/consultations/${consultation.id}`)}
+                onClick={() => safeNavigate(`/medical-student/consultations/${consultation.id}`)}
               />
             ))}
             
@@ -255,7 +279,7 @@ export default function MedicalStudentConsultationsPage() {
               <CompletedConsultationCard
                 key={consultation.id}
                 consultation={consultation}
-                onClick={() => router.push(`/medical-student/consultations/${consultation.id}`)}
+                onClick={() => safeNavigate(`/medical-student/consultations/${consultation.id}`)}
               />
             ))}
           </div>

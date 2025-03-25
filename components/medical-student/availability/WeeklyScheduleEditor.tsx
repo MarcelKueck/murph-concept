@@ -113,6 +113,7 @@ export const WeeklyScheduleEditor: React.FC<WeeklyScheduleEditorProps> = ({
     
     return (
       <div 
+        key={`${day}-${timeSlot}`}
         className={`
           p-4 border border-neutral-200 cursor-pointer transition
           ${isActive ? 'bg-primary-50 border-primary-200' : 'hover:bg-neutral-50'}
@@ -145,12 +146,12 @@ export const WeeklyScheduleEditor: React.FC<WeeklyScheduleEditorProps> = ({
           {/* Header */}
           <div className="grid grid-cols-4 gap-1">
             <div className="p-2"></div>
-            {Object.keys(timeSlotLabels).map((timeSlot) => (
+            {Object.entries(timeSlotLabels).map(([key, label]) => (
               <div 
-                key={timeSlot} 
+                key={key}
                 className="p-2 font-medium text-center text-neutral-700"
               >
-                {timeSlotLabels[timeSlot as keyof typeof timeSlotLabels]}
+                {label}
               </div>
             ))}
           </div>
