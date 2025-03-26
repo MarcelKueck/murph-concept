@@ -16,7 +16,7 @@ import { UserInfo } from '../../../../../components/ui/avatar/UserInfo';
 import Button from '../../../../../components/ui/buttons/Button';
 import { Alert } from '../../../../../components/ui/modal/Alert';
 import { TextArea } from '../../../../../components/ui/forms/TextArea';
-import { ConsultationChatContainer } from '../../../../../components/medical-student/consultations/MedicalStudentChatContainer';
+import { UnifiedCommunicationInterface } from '../../../../../components/UnifiedCommunicationInterface';
 import { formatDate } from '../../../../../lib/utils/formatters';
 
 export default function MedicalStudentConsultationDetailPage() {
@@ -451,17 +451,14 @@ export default function MedicalStudentConsultationDetailPage() {
         }
         right={
           <div className="space-y-6">
-            {/* Messages section */}
-            <Card 
-              title="Messages"
-              className="h-full min-h-[500px] flex flex-col"
-            >
-              <ConsultationChatContainer
-                consultationId={consultation.id}
-                status={consultation.status}
-                patientName={patientInfo?.name || ''}
-              />
-            </Card>
+            {/* Unified communication interface */}
+            <UnifiedCommunicationInterface
+              consultationId={consultation.id}
+              status={consultation.status}
+              preferredChannel={consultation.communicationChannel}
+              isPatient={false}
+              patientName={patientInfo?.name || 'Patient'}
+            />
           </div>
         }
         leftWidth={5}

@@ -18,7 +18,7 @@ import { DocumentCard } from '../../../../../components/ui/cards/DocumentCard';
 import { UserInfo } from '../../../../../components/ui/avatar/UserInfo';
 import Button from '../../../../../components/ui/buttons/Button';
 import { Alert } from '../../../../../components/ui/modal/Alert';
-import { ConsultationChatContainer } from '../../../../../components/patient/consultations/ConsultationChatContainer';
+import { UnifiedCommunicationInterface } from '../../../../../components/UnifiedCommunicationInterface';
 import { formatDate } from '../../../../../lib/utils/formatters';
 
 export default function ConsultationDetailPage() {
@@ -339,16 +339,14 @@ export default function ConsultationDetailPage() {
         }
         right={
           <div className="space-y-6">
-            {/* Messages section */}
-            <Card 
-              title={t('messages')}
-              className="h-full min-h-[500px] flex flex-col"
-            >
-              <ConsultationChatContainer
-                consultationId={consultation.id}
-                status={consultation.status}
-              />
-            </Card>
+            {/* Unified communication interface */}
+            <UnifiedCommunicationInterface
+              consultationId={consultation.id}
+              status={consultation.status}
+              preferredChannel={consultation.communicationChannel}
+              isPatient={true}
+              medicalStudentName={medicalStudent?.name || 'Medical Student'}
+            />
           </div>
         }
         leftWidth={5}
