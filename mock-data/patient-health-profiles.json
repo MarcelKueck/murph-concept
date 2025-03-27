@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hp1",
+    "patientId": "p1",
+    "height": "168 cm",
+    "weight": "72 kg",
+    "bmi": 25.5,
+    "bloodPressure": "125/82 mmHg",
+    "bloodType": "A+",
+    "allergies": ["Penicillin", "Dust mites"],
+    "medications": [
+      {
+        "name": "Atorvastatin",
+        "dosage": "20mg",
+        "frequency": "Once daily at night",
+        "startDate": "2025-02-15"
+      },
+      {
+        "name": "Cetirizine",
+        "dosage": "10mg",
+        "frequency": "As needed for allergies",
+        "startDate": "2024-05-10"
+      }
+    ],
+    "chronicConditions": ["Hypercholesterolemia", "Seasonal allergies"],
+    "familyHistory": ["Father: Heart disease", "Mother: Hypertension"],
+    "lastCheckup": "2025-02-15",
+    "smokingStatus": "Never",
+    "alcoholConsumption": "Occasional",
+    "exerciseFrequency": "Light",
+    "recentMetrics": [
+      {
+        "date": "2025-03-19",
+        "totalCholesterol": 240,
+        "ldl": 160,
+        "hdl": 45,
+        "triglycerides": 175
+      },
+      {
+        "date": "2025-01-15",
+        "totalCholesterol": 255,
+        "ldl": 170,
+        "hdl": 42,
+        "triglycerides": 195
+      }
+    ]
+  },
+  {
+    "id": "hp2",
+    "patientId": "p2",
+    "height": "182 cm",
+    "weight": "92 kg",
+    "bmi": 27.8,
+    "bloodPressure": "138/88 mmHg",
+    "bloodType": "O+",
+    "allergies": ["Sulfa drugs"],
+    "medications": [
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "Twice daily with meals",
+        "startDate": "2025-03-10"
+      },
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "Once daily in the morning",
+        "startDate": "2025-01-05"
+      }
+    ],
+    "chronicConditions": ["Type 2 Diabetes (newly diagnosed)", "Hypertension"],
+    "familyHistory": ["Father: Type 2 Diabetes", "Mother: Hypertension"],
+    "lastCheckup": "2025-03-10",
+    "smokingStatus": "Former",
+    "alcoholConsumption": "Moderate",
+    "exerciseFrequency": "Light",
+    "recentMetrics": [
+      {
+        "date": "2025-03-12",
+        "hba1c": 7.2,
+        "fastingGlucose": 135,
+        "postprandialGlucose": 195
+      }
+    ]
+  },
+  {
+    "id": "hp3",
+    "patientId": "p3",
+    "height": "165 cm",
+    "weight": "58 kg",
+    "bmi": 21.3,
+    "bloodPressure": "118/75 mmHg",
+    "bloodType": "B-",
+    "allergies": ["Pollen", "Cat dander"],
+    "medications": [
+      {
+        "name": "Salbutamol",
+        "dosage": "100 mcg",
+        "frequency": "As needed for asthma symptoms",
+        "startDate": "2022-06-18"
+      },
+      {
+        "name": "Fluticasone",
+        "dosage": "250 mcg",
+        "frequency": "Twice daily",
+        "startDate": "2022-06-18"
+      }
+    ],
+    "chronicConditions": ["Asthma", "Seasonal allergies"],
+    "familyHistory": ["Mother: Asthma", "Sister: Allergies"],
+    "lastCheckup": "2025-02-28",
+    "smokingStatus": "Never",
+    "alcoholConsumption": "Occasional",
+    "exerciseFrequency": "Moderate",
+    "recentMetrics": [
+      {
+        "date": "2025-02-25",
+        "fev1": 75,
+        "fvc": 88,
+        "fev1fvc": 0.68
+      }
+    ]
+  },
+  {
+    "id": "hp4",
+    "patientId": "p4",
+    "height": "178 cm",
+    "weight": "85 kg",
+    "bmi": 26.8,
+    "bloodPressure": "145/92 mmHg",
+    "bloodType": "AB+",
+    "allergies": [],
+    "medications": [
+      {
+        "name": "Ramipril",
+        "dosage": "5mg",
+        "frequency": "Once daily in the morning",
+        "startDate": "2025-03-15"
+      },
+      {
+        "name": "Aspirin",
+        "dosage": "81mg",
+        "frequency": "Once daily",
+        "startDate": "2025-01-10"
+      }
+    ],
+    "chronicConditions": ["Hypertension", "Coronary artery disease"],
+    "familyHistory": ["Father: Heart attack at 62", "Brother: Hypertension"],
+    "lastCheckup": "2025-03-15",
+    "smokingStatus": "Former",
+    "alcoholConsumption": "Occasional",
+    "exerciseFrequency": "Light",
+    "recentMetrics": [
+      {
+        "date": "2025-03-14",
+        "systolicBP": 145,
+        "diastolicBP": 92,
+        "heartRate": 78
+      }
+    ]
+  }
+]

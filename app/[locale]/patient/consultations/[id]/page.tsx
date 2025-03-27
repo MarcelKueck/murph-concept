@@ -12,14 +12,12 @@ import { PageContainer } from '../../../../../components/ui/layout/PageContainer
 import { PageHeader } from '../../../../../components/ui/layout/PageHeader';
 import { Card } from '../../../../../components/ui/cards/Card';
 import { SplitLayout } from '../../../../../components/ui/layout/SplitLayout';
-import { Breadcrumbs } from '../../../../../components/ui/navigation/Breadcrumbs';
-import { StatusBadge } from '../../../../../components/ui/status/StatusBadge';
-import { DocumentCard } from '../../../../../components/ui/cards/DocumentCard';
-import { UserInfo } from '../../../../../components/ui/avatar/UserInfo';
-import Button from '../../../../../components/ui/buttons/Button';
 import { Alert } from '../../../../../components/ui/modal/Alert';
 import { UnifiedCommunicationInterface } from '../../../../../components/UnifiedCommunicationInterface';
 import { formatDate } from '../../../../../lib/utils/formatters';
+
+// Import the new rich consultation detail component
+import { RichConsultationDetail } from '../../../../../components/patient/consultations/RichConsultationDetail';
 
 export default function ConsultationDetailPage() {
   const t = useTranslations('patient.consultation.details');
@@ -36,6 +34,8 @@ export default function ConsultationDetailPage() {
   const [actionLoading, setActionLoading] = useState<boolean>(false);
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionSuccess, setActionSuccess] = useState<string | null>(null);
+  const [medicalStudent, setMedicalStudent] = useState<any>(null);
+  const [messages, setMessages] = useState<any[]>([]);
   
   // Get the consultation ID from the URL
   const consultationId = params?.id as string;
@@ -45,8 +45,47 @@ export default function ConsultationDetailPage() {
     if (user?.id) {
       fetchConsultations(user.id, 'PATIENT');
       fetchDocuments(user.id);
+      
+      // Fetch medical students data
+      const fetchMedicalStudents = async () => {
+        try {
+          const response = await import('../../../../../mock-data/users/medical-students.json');
+          return response.default;
+        } catch (error) {
+          console.error('Error fetching medical students:', error);
+          return [];
+        }
+      };
+      
+      // Fetch messages data
+      const fetchMessages = async () => {
+        try {
+          const response = await import('../../../../../mock-data/messages/messages.json');
+          return response.default;
+        } catch (error) {
+          console.error('Error fetching messages:', error);
+          return [];
+        }
+      };
+      
+      // Load additional data
+      Promise.all([fetchMedicalStudents(), fetchMessages()]).then(([students, msgs]) => {
+        // Store medical students for later reference
+        if (consultation?.medicalStudentId) {
+          const student = students.find((s: any) => s.id === consultation.medicalStudentId);
+          if (student) {
+            setMedicalStudent(student);
+          }
+        }
+        
+        // Store related messages
+        if (consultationId) {
+          const consultationMessages = msgs.filter((m: any) => m.consultationId === consultationId);
+          setMessages(consultationMessages);
+        }
+      });
     }
-  }, [user?.id, fetchConsultations, fetchDocuments]);
+  }, [user?.id, fetchConsultations, fetchDocuments, consultationId, consultation?.medicalStudentId]);
   
   // Find the current consultation and related documents
   useEffect(() => {
@@ -67,8 +106,8 @@ export default function ConsultationDetailPage() {
     }
   }, [consultationId, consultations, documents]);
   
-  // Handle cancel consultation
-  const handleCancelConsultation = async () => {
+  // Handle status update
+  const handleStatusUpdate = async (newStatus: string) => {
     if (!consultation) return;
     
     setActionLoading(true);
@@ -76,14 +115,14 @@ export default function ConsultationDetailPage() {
     setActionSuccess(null);
     
     try {
-      await updateConsultation(consultation.id, { status: 'CLOSED' });
-      setActionSuccess(t('cancelSuccess'));
+      await updateConsultation(consultation.id, { status: newStatus });
+      setActionSuccess(t('statusUpdateSuccess'));
       
       // Update the local consultation
-      setConsultation(prev => ({ ...prev, status: 'CLOSED' }));
+      setConsultation(prev => ({ ...prev, status: newStatus }));
     } catch (err) {
       setActionError(c.errors.general);
-      console.error('Error canceling consultation:', err);
+      console.error('Error updating consultation status:', err);
     } finally {
       setActionLoading(false);
     }
@@ -95,76 +134,10 @@ export default function ConsultationDetailPage() {
     console.log(`Opening document: ${documentId}`);
   };
   
-  // Determine available actions based on status
-  const getAvailableActions = () => {
-    if (!consultation) return null;
-    
-    const { status } = consultation;
-    
-    // Actions for different statuses
-    if (['REQUESTED', 'ASSIGNED'].includes(status)) {
-      return (
-        <Button
-          variant="tertiary"
-          onClick={handleCancelConsultation}
-          disabled={actionLoading}
-        >
-          {actionLoading ? c.status.loading : t('actions.cancel')}
-        </Button>
-      );
-    }
-    
-    if (status === 'SCHEDULED') {
-      return (
-        <div className="flex flex-col sm:flex-row gap-2">
-          <Button
-            variant="tertiary"
-            onClick={handleCancelConsultation}
-            disabled={actionLoading}
-          >
-            {actionLoading ? c.status.loading : t('actions.cancel')}
-          </Button>
-          
-          <Button
-            variant="secondary"
-            onClick={() => console.log('Reschedule')}
-          >
-            {t('actions.reschedule')}
-          </Button>
-        </div>
-      );
-    }
-    
-    if (status === 'IN_PROGRESS') {
-      return (
-        <div className="flex flex-col sm:flex-row gap-2">
-          <Button
-            onClick={() => console.log('Connect now')}
-          >
-            {t('actions.connect')}
-          </Button>
-          
-          <Button
-            variant="secondary"
-            onClick={() => console.log('Send message')}
-          >
-            {t('actions.sendMessage')}
-          </Button>
-        </div>
-      );
-    }
-    
-    if (status === 'RESOLVED') {
-      return (
-        <Button
-          onClick={() => console.log('Provide rating')}
-        >
-          {t('actions.provideRating')}
-        </Button>
-      );
-    }
-    
-    return null;
+  // Handle document download
+  const handleDocumentDownload = (documentId: string) => {
+    // In a real app, this would download the document
+    console.log(`Downloading document: ${documentId}`);
   };
   
   // Loading state
@@ -191,30 +164,6 @@ export default function ConsultationDetailPage() {
       </PageContainer>
     );
   }
-  
-  // Get medical student if assigned
-  const medicalStudent = consultation.medicalStudentId ? {
-    id: 'ms1',
-    name: 'Dr. Julia Müller',
-    info: 'Charité - Universitätsmedizin Berlin, Year 5'
-  } : null;
-  
-  // Consultation type label
-  const consultationTypeLabels: Record<string, string> = {
-    'labResult': t('typeLabels.labResult'),
-    'medication': t('typeLabels.medication'),
-    'imaging': t('typeLabels.imaging'),
-    'symptoms': t('typeLabels.symptoms'),
-    'general': t('typeLabels.general')
-  };
-  
-  // Communication channel label
-  const communicationChannelLabels: Record<string, string> = {
-    'video': t('channelLabels.video'),
-    'audio': t('channelLabels.audio'),
-    'text': t('channelLabels.text'),
-    'async': t('channelLabels.async')
-  };
   
   return (
     <PageContainer>
@@ -249,92 +198,18 @@ export default function ConsultationDetailPage() {
       
       <SplitLayout
         left={
-          <div className="space-y-6">
-            {/* Consultation details */}
-            <Card title={t('details')}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-sm font-medium text-neutral-500">{t('status')}</p>
-                  <div className="mt-1">
-                    <StatusBadge status={consultation.status} />
-                  </div>
-                </div>
-                
-                <div>
-                  <p className="text-sm font-medium text-neutral-500">{t('type')}</p>
-                  <p className="mt-1 text-neutral-900">
-                    {consultationTypeLabels[consultation.type] || consultation.type}
-                  </p>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <p className="text-sm font-medium text-neutral-500">{t('primaryConcern')}</p>
-                  <p className="mt-1 text-neutral-900">{consultation.primaryConcern}</p>
-                </div>
-                
-                <div className="md:col-span-2">
-                  <p className="text-sm font-medium text-neutral-500">{t('description')}</p>
-                  <p className="mt-1 text-neutral-900 whitespace-pre-line">{consultation.description}</p>
-                </div>
-                
-                <div>
-                  <p className="text-sm font-medium text-neutral-500">{t('communicationChannel')}</p>
-                  <p className="mt-1 text-neutral-900">
-                    {communicationChannelLabels[consultation.communicationChannel] || consultation.communicationChannel}
-                  </p>
-                </div>
-                
-                {consultation.scheduledFor && (
-                  <div>
-                    <p className="text-sm font-medium text-neutral-500">{t('scheduledFor')}</p>
-                    <p className="mt-1 text-neutral-900">{formatDate(consultation.scheduledFor)}</p>
-                  </div>
-                )}
-                
-                <div>
-                  <p className="text-sm font-medium text-neutral-500">{t('createdAt')}</p>
-                  <p className="mt-1 text-neutral-900">{formatDate(consultation.createdAt)}</p>
-                </div>
-                
-                {consultation.medicalStudentId && (
-                  <div>
-                    <p className="text-sm font-medium text-neutral-500">{t('assignedTo')}</p>
-                    <div className="mt-2">
-                      <UserInfo
-                        name={medicalStudent?.name || ''}
-                        info={medicalStudent?.info || ''}
-                        status="online"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Actions */}
-              {getAvailableActions() && (
-                <div className="mt-6 pt-6 border-t border-neutral-200">
-                  {getAvailableActions()}
-                </div>
-              )}
+          <div>
+            <Card>
+              <RichConsultationDetail
+                consultation={consultation}
+                medicalStudent={medicalStudent}
+                relatedDocuments={relatedDocuments}
+                recentMessages={messages}
+                onStatusUpdate={handleStatusUpdate}
+                onViewDocument={handleDocumentClick}
+                onDownloadDocument={handleDocumentDownload}
+              />
             </Card>
-            
-            {/* Related documents */}
-            {relatedDocuments.length > 0 && (
-              <Card title={t('documents')}>
-                <div className="space-y-4">
-                  {relatedDocuments.map((document) => (
-                    <DocumentCard
-                      key={document.id}
-                      name={document.name}
-                      type={document.type}
-                      uploadDate={formatDate(document.uploadedAt)}
-                      onClick={() => handleDocumentClick(document.id)}
-                      onDownload={() => console.log(`Downloading document: ${document.id}`)}
-                    />
-                  ))}
-                </div>
-              </Card>
-            )}
           </div>
         }
         right={

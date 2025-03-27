@@ -1,212 +1,639 @@
 [
   {
-    "id": "m1",
-    "content": "Hello, I'd like to understand my blood test results, especially the cholesterol values.",
+    "id": "m1c1-1",
+    "consultationId": "c1",
+    "content": "Hello, I'd like to understand my blood test results, especially my cholesterol levels. My doctor said they're high but didn't explain much about what this means for my health.",
     "sentAt": "2025-03-20T14:35:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c1"
+    "isFromPatient": true
   },
   {
-    "id": "m2",
-    "content": "Hello! I'll be happy to help you understand your results. I see your LDL cholesterol is slightly elevated. Let's discuss what that means when we meet.",
+    "id": "m1c1-2",
+    "consultationId": "c1",
+    "content": "Hello Maria! I'll be happy to help you understand your results. I see you've uploaded your lipid panel from March. I notice your total cholesterol is 240 mg/dL, which is indeed above the recommended level of below 200 mg/dL. Would you like me to explain what each value means and what this might mean for your health?",
     "sentAt": "2025-03-20T14:42:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c1"
+    "isFromPatient": false
   },
   {
-    "id": "m3",
-    "content": "Great, thank you. I'm particularly concerned about my cholesterol and glucose levels.",
+    "id": "m1c1-3",
+    "consultationId": "c1",
+    "content": "Yes, please. I'm particularly concerned about my cholesterol and whether I need to be worried about heart problems. I see there are different types of cholesterol mentioned - LDL and HDL. What's the difference?",
     "sentAt": "2025-03-20T14:50:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c1"
+    "isFromPatient": true
   },
   {
-    "id": "m4",
-    "content": "I understand your concern. I'll make sure to explain both of those in detail during our video call. Is there anything else you'd like to focus on?",
+    "id": "m1c1-4",
+    "consultationId": "c1",
+    "content": "That's a great question. LDL (low-density lipoprotein) is often called 'bad cholesterol' because high levels can lead to plaque buildup in your arteries. Your LDL is 160 mg/dL, which is above the optimal level of less than 100 mg/dL. HDL (high-density lipoprotein) is known as 'good cholesterol' because it helps remove other forms of cholesterol from your bloodstream. Your HDL is 45 mg/dL, which is borderline - ideally, we'd want to see it above 60 mg/dL for women.",
     "sentAt": "2025-03-20T15:05:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c1"
+    "isFromPatient": false
   },
   {
-    "id": "m5",
-    "content": "Hi, I just started taking this new medication and I'm experiencing some side effects like dizziness. Is this normal?",
+    "id": "m1c1-5",
+    "consultationId": "c1",
+    "content": "I understand. So my 'bad' cholesterol is too high and my 'good' cholesterol could be higher. Is this something I need medication for right away? My father had heart problems in his 60s, so I'm concerned.",
+    "sentAt": "2025-03-20T15:12:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m1c1-6",
+    "consultationId": "c1",
+    "content": "Your family history is definitely important to consider. The decision to start medication depends on several factors, including your overall cardiovascular risk. Your triglycerides are also slightly elevated at 175 mg/dL (optimal is <150). Before medication, doctors typically recommend lifestyle modifications first: diet changes (reducing saturated fats, increasing fiber), regular exercise, weight management if needed, and limiting alcohol. Would you like to discuss these lifestyle approaches in more detail during our scheduled video call?",
+    "sentAt": "2025-03-20T15:20:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m1c1-7",
+    "consultationId": "c1",
+    "content": "Yes, that would be very helpful. I'd like to try lifestyle changes before medication if possible. I'm looking forward to our video call to discuss this in more detail. Thank you for explaining these results - I understand them much better now.",
+    "sentAt": "2025-03-20T15:25:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m2c2-1",
+    "consultationId": "c2",
+    "content": "Hi, I just started taking this new medication called Metformin for my recently diagnosed Type 2 Diabetes. I'm experiencing some side effects like dizziness and nausea, especially after meals. Is this normal or should I be concerned?",
     "sentAt": "2025-03-21T09:20:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c2"
+    "isFromPatient": true
   },
   {
-    "id": "m6",
-    "content": "Hello, I have a question about my chest X-ray report. The doctor mentioned something about \"slight opacity\" but didn't explain what it means.",
+    "id": "m2c2-2",
+    "consultationId": "c2",
+    "content": "Hello Thomas. Thank you for reaching out about your concerns with Metformin. Gastrointestinal side effects like nausea are indeed common when starting Metformin, but dizziness is less typical and might need attention. How severe is the dizziness, and does it occur immediately after taking the medication?",
+    "sentAt": "2025-03-21T09:45:00.000Z", 
+    "isFromPatient": false
+  },
+  {
+    "id": "m2c2-3",
+    "consultationId": "c2",
+    "content": "The dizziness usually happens about 30 minutes after I take the medication with food. It's not severe enough that I feel like I'll faint, but it's definitely noticeable and uncomfortable. The nausea is worse in the mornings. I'm taking 500mg twice daily as prescribed.",
+    "sentAt": "2025-03-21T10:05:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m2c2-4",
+    "consultationId": "c2",
+    "content": "Thank you for the additional information. The timing of your symptoms is helpful to know. Metformin can sometimes cause a temporary drop in blood sugar, which might explain the dizziness. Are you monitoring your blood glucose levels at home? If so, it would be helpful to check your levels when you experience the dizziness to see if there's a correlation.",
+    "sentAt": "2025-03-21T10:20:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m2c2-5",
+    "consultationId": "c2",
+    "content": "Yes, I'm monitoring my glucose levels. I haven't specifically checked during the dizzy spells, but my morning fasting readings are around 135-145 mg/dL. I'll start checking when I feel dizzy. Is there anything I can do to reduce the nausea? It's making it difficult to eat properly.",
+    "sentAt": "2025-03-21T10:40:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m2c2-6",
+    "consultationId": "c2",
+    "content": "For the nausea, there are a few strategies that might help: 1) Make sure to take Metformin in the middle of your meal, not before or after; 2) Start with smaller, more frequent meals; 3) Temporarily avoid fatty or spicy foods that might aggravate nausea. The good news is that these side effects often improve within 1-2 weeks as your body adjusts to the medication. If they persist or worsen, your doctor might consider a different formulation like extended-release Metformin, which tends to cause fewer GI symptoms.",
+    "sentAt": "2025-03-21T11:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m3c3-1",
+    "consultationId": "c3",
+    "content": "Hello, I have a question about my chest X-ray report. The doctor mentioned something about \"slight opacity\" in my right lung but didn't explain what it means. I have asthma, so I'm worried if this is something serious I should be concerned about.",
     "sentAt": "2025-03-22T14:25:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c3"
+    "isFromPatient": true
   },
   {
-    "id": "m7",
-    "content": "Hi there. I've reviewed your X-ray report and I'd be happy to explain what \"slight opacity\" means during our scheduled video call. It's a common finding that could have several interpretations.",
+    "id": "m3c3-2",
+    "consultationId": "c3",
+    "content": "Hi Anna. I've reviewed your X-ray report and I'd be happy to explain what \"slight opacity\" means during our scheduled video call. It's a common finding that could have several interpretations. In someone with asthma like yourself, it could be related to your condition, but there are other possible explanations as well. We'll discuss this thoroughly during our call.",
     "sentAt": "2025-03-22T15:10:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c3"
+    "isFromPatient": false
   },
   {
-    "id": "m8",
+    "id": "m3c3-3",
+    "consultationId": "c3",
     "content": "Thank you, that would be great. Is there anything I should prepare before our call?",
     "sentAt": "2025-03-22T16:45:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c3"
+    "isFromPatient": true
   },
   {
-    "id": "m9",
-    "content": "Just have your X-ray report handy, and if you have any previous imaging results for comparison, those would be helpful too. Also, prepare any specific questions you might have.",
+    "id": "m3c3-4",
+    "consultationId": "c3",
+    "content": "Just have your X-ray report handy, and if you have any previous imaging results for comparison, those would be helpful too. Also, please prepare any specific questions you might have. It would also be useful to know about any recent respiratory symptoms you've experienced, changes in your asthma control, and your current medications.",
     "sentAt": "2025-03-22T17:20:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c3"
+    "isFromPatient": false
   },
   {
-    "id": "m10",
-    "content": "I need to understand how this heart medication works. My doctor prescribed Ramipril but didn't explain much about it.",
+    "id": "m3c3-5",
+    "consultationId": "c3",
+    "content": "I'll gather all that information. I've also uploaded my hospital discharge summary from February when I had an asthma exacerbation. Would you be able to review that before our call as well?",
+    "sentAt": "2025-03-22T18:05:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m3c3-6",
+    "consultationId": "c3",
+    "content": "Yes, I'll definitely review your discharge summary before our call. That will provide important context about your recent asthma exacerbation. Thanks for uploading it. I look forward to our conversation on the 24th.",
+    "sentAt": "2025-03-22T18:35:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m4c4-1",
+    "consultationId": "c4",
+    "content": "I need to understand how this heart medication works. My doctor prescribed Ramipril but didn't explain much about it. I've been taking it for a few days and experiencing some dizziness when I stand up quickly.",
     "sentAt": "2025-03-18T09:40:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c4"
+    "isFromPatient": true
   },
   {
-    "id": "m11",
-    "content": "Hello! I'd be happy to help you understand Ramipril. It's an ACE inhibitor that helps relax blood vessels to lower blood pressure. We can discuss how it works, how to take it properly, and any potential side effects during our call.",
+    "id": "m4c4-2",
+    "consultationId": "c4",
+    "content": "Hello! I'd be happy to help you understand Ramipril. It's an ACE inhibitor that helps relax blood vessels to lower blood pressure. The dizziness you're experiencing when standing is called orthostatic hypotension, which is a known side effect as your body adjusts to the medication. We can discuss how it works, how to take it properly, and any potential side effects during our call.",
     "sentAt": "2025-03-18T10:15:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c4"
+    "isFromPatient": false
   },
   {
-    "id": "m12",
+    "id": "m4c4-3",
+    "consultationId": "c4",
     "content": "That would be very helpful. Should I take it with food or on an empty stomach?",
     "sentAt": "2025-03-18T11:30:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c4"
+    "isFromPatient": true
   },
   {
-    "id": "m13",
+    "id": "m4c4-4",
+    "consultationId": "c4",
+    "content": "Ramipril can be taken with or without food, so you can choose what works best for your routine. However, it's important to take it at the same time each day for consistent blood pressure control. For the dizziness you're experiencing, it may help to rise slowly from sitting or lying positions. Also, staying well-hydrated can help minimize this side effect. Have you been monitoring your blood pressure at home?",
+    "sentAt": "2025-03-18T12:05:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m4c4-5",
+    "consultationId": "c4",
+    "content": "Yes, I've been keeping a log of my blood pressure readings. It seems to be coming down gradually - was around 145/92 before starting, now averaging about 135/85. Is that good progress? Also, how long should the dizziness last? Will my body adjust to the medication eventually?",
+    "sentAt": "2025-03-18T14:20:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m4c4-6",
+    "consultationId": "c4",
+    "content": "That's definitely good progress with your blood pressure! A gradual reduction is actually ideal rather than a sudden drop. As for the dizziness, most people find that it improves within 1-2 weeks as your body adjusts to the medication. If it persists or becomes severe, that would warrant discussion with your doctor. We can review your complete blood pressure log during our scheduled audio call to see the trend more clearly.",
+    "sentAt": "2025-03-18T15:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m5c5-1",
+    "consultationId": "c5",
     "content": "I'm really confused about my thyroid test results. My doctor said they're \"borderline\" but I don't know what that means for my health.",
     "sentAt": "2025-03-15T11:20:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c5"
+    "isFromPatient": true
   },
   {
-    "id": "m14",
+    "id": "m5c5-2",
+    "consultationId": "c5",
+    "content": "Hello Sophie. After reviewing your thyroid function tests, I can see why there might be some confusion. Your TSH (Thyroid Stimulating Hormone) is 4.8 mIU/L, which is just above the normal reference range of 0.4-4.5 mIU/L. However, your T3 and T4 (the actual thyroid hormones) are within normal limits. This pattern is often referred to as 'subclinical hypothyroidism' - it means your thyroid is working a bit harder than normal to maintain adequate hormone levels.",
+    "sentAt": "2025-03-15T12:10:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m5c5-3",
+    "consultationId": "c5",
+    "content": "Thank you for explaining. Does this mean I need medication? I've been feeling more tired than usual lately, and my hair seems to be thinning. Could that be related to this borderline thyroid issue?",
+    "sentAt": "2025-03-15T12:35:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m5c5-4",
+    "consultationId": "c5",
+    "content": "The symptoms you're describing - fatigue and hair thinning - can indeed be associated with thyroid dysfunction. However, with subclinical hypothyroidism, the decision to treat with medication isn't always straightforward. Treatment decisions typically consider factors like symptom severity, TSH level, presence of thyroid antibodies, and other health conditions. From your ultrasound results, I note you have a small 7mm thyroid nodule, which is likely benign but should be monitored. Would you like me to explain the pros and cons of treatment for your specific situation?",
+    "sentAt": "2025-03-15T13:05:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m6c6-1",
+    "consultationId": "c6",
     "content": "I'm trying to understand my MRI knee results. There are terms like \"meniscal tear\" and \"partial ACL sprain\" that I don't understand.",
     "sentAt": "2025-03-08T10:15:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c6"
+    "isFromPatient": true
   },
   {
-    "id": "m15",
+    "id": "m6c6-2",
+    "consultationId": "c6",
+    "content": "Hello Lukas. The terms in your MRI report refer to specific structures in your knee. The meniscus is a C-shaped piece of cartilage that acts as a cushion between your thighbone and shinbone. A tear means this cushioning tissue has been damaged. The ACL (Anterior Cruciate Ligament) is one of the main stabilizing ligaments in your knee, and a partial sprain indicates some of the fibers are stretched or torn, but the ligament is still partially intact. Would you like me to explain what these injuries typically mean for recovery and function?",
+    "sentAt": "2025-03-08T11:05:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m6c6-3",
+    "consultationId": "c6",
+    "content": "Yes, please. I'm an active person and play recreational soccer weekly. How long will recovery take, and will I need surgery? The pain isn't severe but my knee feels unstable when I pivot.",
+    "sentAt": "2025-03-08T11:30:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m6c6-4",
+    "consultationId": "c6",
+    "content": "Your description of instability with pivoting is significant. For a Grade II meniscal tear like yours, recovery typically takes 6-8 weeks with proper rehabilitation. Surgery isn't always necessary for meniscal tears, especially if they're small and in areas with good blood supply. The partial ACL sprain complicates things somewhat - it may heal without surgery, but the instability you describe could indicate that physical therapy alone might not be sufficient for your activity level. The physical therapy prescription you uploaded outlines a good initial approach. Would you like me to review the specific exercises recommended?",
+    "sentAt": "2025-03-08T12:10:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m7c7-1",
+    "consultationId": "c7",
     "content": "Can you help me understand my allergy test results? I tested positive for several things but don't know what changes I need to make.",
     "sentAt": "2025-03-20T13:40:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c7"
+    "isFromPatient": true
   },
   {
-    "id": "m16",
+    "id": "m7c7-2",
+    "consultationId": "c7",
     "content": "Hi! I'd be happy to explain your allergy test results. I've reviewed the document you uploaded, and I can see several environmental and food allergies listed. Let's discuss these in detail during our scheduled call.",
     "sentAt": "2025-03-20T14:25:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c7"
+    "isFromPatient": false
   },
   {
-    "id": "m17",
+    "id": "m7c7-3",
+    "consultationId": "c7",
+    "content": "Thank you. I'm particularly concerned about the pollen and dust mite allergies, as I seem to have symptoms year-round. Are there specific measures beyond medication that could help reduce my exposure?",
+    "sentAt": "2025-03-20T15:10:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m7c7-4",
+    "consultationId": "c7",
+    "content": "Absolutely! For dust mites, there are several effective environmental controls: use allergen-proof covers for mattresses and pillows, wash bedding weekly in hot water (60°C+), reduce humidity in your home to <50%, remove carpeting if possible, and use a vacuum with a HEPA filter. For pollen, tracking local pollen counts, keeping windows closed during high pollen seasons, showering after outdoor activities, and using air purifiers can all help. I can provide more detailed recommendations for both allergies during our call, as well as discuss your cat dander allergy management.",
+    "sentAt": "2025-03-20T15:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m8c8-1",
+    "consultationId": "c8",
     "content": "My test shows I'm low in Vitamin D and B12. What does this mean and how should I address it?",
     "sentAt": "2025-03-21T14:50:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c8"
+    "isFromPatient": true
   },
   {
-    "id": "m18",
+    "id": "m8c8-2",
+    "consultationId": "c8",
+    "content": "Hello Felix. I've reviewed your vitamin panel results. Your Vitamin D level is 15 ng/mL (optimal is >30 ng/mL) and B12 is 190 pg/mL (optimal is >300 pg/mL). Both deficiencies can cause fatigue, weakness, and neurological symptoms if left untreated. Vitamin D deficiency is common in northern climates with limited sun exposure, while B12 deficiency can result from dietary factors, certain medications, or absorption issues. Have you been experiencing any symptoms like fatigue, tingling in hands/feet, or muscle weakness?",
+    "sentAt": "2025-03-21T15:30:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m8c8-3",
+    "consultationId": "c8",
+    "content": "Yes, I've been feeling unusually tired for the past few months and occasionally get a tingling sensation in my feet. I work indoors most of the day and don't eat many animal products - could that be contributing to these deficiencies?",
+    "sentAt": "2025-03-21T16:10:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m8c8-4",
+    "consultationId": "c8",
+    "content": "Your lifestyle factors definitely contribute to both deficiencies. Limited sun exposure reduces natural Vitamin D production, and a diet low in animal products can lead to B12 deficiency (as B12 is primarily found in animal foods). For Vitamin D, supplementation of 1000-2000 IU daily is typically recommended for deficiency. For B12, either supplements (1000-2000 mcg daily) or potentially B12 injections may be needed, depending on the severity and underlying cause. Diet modifications can help, such as including fortified foods. Would you like specific supplement recommendations or dietary suggestions for your situation?",
+    "sentAt": "2025-03-21T16:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m9c9-1",
+    "consultationId": "c9",
     "content": "I've attached photos of a rash I've had for two weeks. It's not painful but it's spreading and I'm wondering if I should see a dermatologist.",
     "sentAt": "2025-03-19T09:10:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c9"
+    "isFromPatient": true
   },
   {
-    "id": "m19",
+    "id": "m9c9-2",
+    "consultationId": "c9",
     "content": "I've reviewed the photos of your skin condition and would like to discuss this in our upcoming video consultation. While I can't provide a diagnosis, I can help you understand when a dermatology referral might be appropriate.",
     "sentAt": "2025-03-19T10:40:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c9"
+    "isFromPatient": false
   },
   {
-    "id": "m20",
+    "id": "m9c9-3",
+    "consultationId": "c9",
+    "content": "Thank you. The rash started on my stomach and has now spread to my arms. It's slightly itchy but not painful. I haven't changed any soaps or detergents recently. Could it be an allergic reaction to something else?",
+    "sentAt": "2025-03-19T11:15:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m9c9-4",
+    "consultationId": "c9",
+    "content": "Based on your description of the rash spreading over two weeks with mild itching and no clear trigger, it could indeed be an allergic reaction, but there are several other possibilities as well. The photos show what appears to be erythematous (red) patches with some scaling. Given that it's spreading and has persisted for two weeks, I do think a dermatology evaluation would be appropriate. During our video consultation, I can examine the rash more closely and provide more specific guidance. In the meantime, try to avoid scratching, use gentle soap-free cleansers, and note any patterns in when the itching worsens.",
+    "sentAt": "2025-03-19T12:05:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m10c10-1",
+    "consultationId": "c10",
     "content": "My cholesterol panel shows high LDL and triglycerides. What lifestyle changes should I consider?",
     "sentAt": "2025-03-17T15:30:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c10"
+    "isFromPatient": true
   },
   {
-    "id": "m21",
+    "id": "m10c10-2",
+    "consultationId": "c10",
     "content": "I understand your concern about the cholesterol results. During our call, we can discuss dietary modifications, exercise recommendations, and other lifestyle factors that can help improve these values.",
     "sentAt": "2025-03-17T16:15:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c10"
+    "isFromPatient": false
   },
   {
-    "id": "m22",
+    "id": "m10c10-3",
+    "consultationId": "c10",
+    "content": "Thank you. My LDL is 165 mg/dL and triglycerides are 210 mg/dL. I currently exercise about once a week and my diet includes quite a bit of red meat and cheese. I'd like to know what specific changes would have the biggest impact.",
+    "sentAt": "2025-03-17T17:00:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m10c10-4",
+    "consultationId": "c10",
+    "content": "Based on your current lifestyle and lipid values, here are the changes likely to have the biggest impact: 1) Dietary modifications - reduce saturated fat intake by limiting red meat to once a week and choosing lower-fat dairy options; increase soluble fiber from sources like oats, beans, and fruits; add plant sterols found in foods like nuts and seeds; 2) Exercise - aim for at least 150 minutes of moderate activity weekly, ideally spread across 4-5 days; 3) Weight management - even a 5-10% reduction in body weight can significantly improve lipid profiles. We can discuss these in more detail during our call, including specific meal planning strategies and an exercise routine that fits your schedule.",
+    "sentAt": "2025-03-17T17:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m11c11-1",
+    "consultationId": "c11",
     "content": "I've had a persistent cough for three weeks now. It's mostly dry and worse at night. Should I be concerned?",
     "sentAt": "2025-03-14T10:20:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c11"
+    "isFromPatient": true
   },
   {
-    "id": "m23",
+    "id": "m11c11-2",
+    "consultationId": "c11",
+    "content": "Thank you for sharing your symptoms. A persistent cough lasting three weeks does warrant attention. Could you tell me if you've had any other symptoms like fever, chest pain, shortness of breath, or if you've recently had a cold or other illness?",
+    "sentAt": "2025-03-14T10:50:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m11c11-3",
+    "consultationId": "c11",
+    "content": "I had a cold about a month ago that seemed to clear up, but this cough has lingered. No fever or chest pain, but I do feel slightly short of breath after climbing stairs, which isn't normal for me. The cough is particularly annoying at night and disrupts my sleep.",
+    "sentAt": "2025-03-14T11:20:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m11c11-4",
+    "consultationId": "c11",
+    "content": "Based on your description, this sounds like it could be a post-viral cough, which can persist for 3-8 weeks after a cold. The nighttime worsening could be due to postnasal drip or mild reflux. The shortness of breath with exertion is worth noting, though. Let's schedule a video call to discuss this further and so I can observe your breathing pattern. In the meantime, staying well-hydrated, using a humidifier at night, and elevating your head while sleeping might help reduce symptoms.",
+    "sentAt": "2025-03-14T12:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m11c11-5",
+    "consultationId": "c11",
     "content": "Thanks for explaining all this to me during our call. The information about post-viral coughs was very helpful. I'll try the humidifier as you suggested.",
     "sentAt": "2025-03-15T15:10:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c11"
+    "isFromPatient": true
   },
   {
-    "id": "m24",
+    "id": "m11c11-6",
+    "consultationId": "c11",
     "content": "I'm glad the information was helpful! Remember to stay hydrated and rest as needed. If the cough persists beyond 6 weeks or you develop new symptoms, please consider seeing your doctor.",
     "sentAt": "2025-03-15T15:25:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c11"
+    "isFromPatient": false
   },
   {
-    "id": "m25",
+    "id": "m12c12-1",
+    "consultationId": "c12",
     "content": "I've been having recurring headaches, mostly in the afternoon. They're focused around my temples and forehead.",
     "sentAt": "2025-03-21T16:15:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c12"
+    "isFromPatient": true
   },
   {
-    "id": "m26",
+    "id": "m12c12-2",
+    "consultationId": "c12",
+    "content": "I'm sorry to hear about your headaches. To better understand your situation, could you share how long you've been experiencing these headaches, how often they occur, and if you've noticed any triggers? Also, on a scale of 1-10, how would you rate the pain intensity?",
+    "sentAt": "2025-03-21T16:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m12c12-3",
+    "consultationId": "c12",
+    "content": "The headaches started about a month ago and happen 3-4 times a week, usually after I've been working at my computer for several hours. The pain is about a 6/10 at its worst. I've noticed they're more likely to occur if I skip lunch or don't drink enough water during the day.",
+    "sentAt": "2025-03-21T17:15:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m12c12-4",
+    "consultationId": "c12",
+    "content": "Thank you for that detailed information. The pattern you're describing - location in temples/forehead, afternoon timing, relation to computer work, and triggers like missed meals and dehydration - is consistent with tension-type headaches, possibly with some elements of eyestrain from computer use. I'd like to discuss this further in our consultation, but in the meantime, I'd recommend regular breaks from screen time (the 20-20-20 rule: every 20 minutes, look at something 20 feet away for 20 seconds), staying hydrated, regular meals, and proper ergonomics at your workstation. Have you tried any treatments so far?",
+    "sentAt": "2025-03-21T17:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m13c13-1",
+    "consultationId": "c13",
     "content": "I'd like advice on starting an exercise routine after being inactive for about 2 years. I'm 42 and used to jog regularly.",
     "sentAt": "2025-03-22T10:05:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c13"
+    "isFromPatient": true
   },
   {
-    "id": "m27",
+    "id": "m13c13-2",
+    "consultationId": "c13",
+    "content": "It's great that you're looking to get back into an exercise routine! When returning to exercise after a long break, it's important to start gradually to prevent injury and build sustainable habits. Since you used to jog, your body will likely remember some of that fitness, but you'll still need to rebuild slowly. Do you have any health conditions I should be aware of before making recommendations? And what are your current fitness goals?",
+    "sentAt": "2025-03-22T10:40:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m13c13-3",
+    "consultationId": "c13",
+    "content": "I don't have any major health conditions, but I do have occasional knee pain in my right knee from an old sports injury. I'd like to build back my cardiovascular fitness and possibly train for a 5K later this year. I work full-time and have two children, so time is limited - I'd need something efficient.",
+    "sentAt": "2025-03-22T11:15:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m13c13-4",
+    "consultationId": "c13",
+    "content": "Thank you for sharing that information. With your time constraints and knee history, I'd recommend a progressive approach: Start with a mix of walking and very light jogging (walk-jog intervals) 3 times per week for 20-30 minutes. Begin with mostly walking and gradually increase the jogging portions over 4-6 weeks. Include at least 5 minutes of warm-up and cool-down. For your knee, consider cross-training with low-impact activities like swimming or cycling once weekly to reduce stress on the joints while building fitness. Strength training twice weekly focusing on core and leg muscles will also help prevent injury. I can create a detailed 8-week plan for your 5K goal during our consultation. Would you like specific exercises for knee stability as well?",
+    "sentAt": "2025-03-22T12:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m14c14-1",
+    "consultationId": "c14",
     "content": "I've been experiencing stiffness and pain in my finger joints, especially in the morning. It improves as the day goes on. What could this be?",
     "sentAt": "2025-03-20T11:45:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c14"
+    "isFromPatient": true
   },
   {
-    "id": "m28",
+    "id": "m14c14-2",
+    "consultationId": "c14",
     "content": "Thank you for describing your symptoms. Morning stiffness that improves with activity can be associated with several conditions. I've scheduled our video call where we can discuss possible causes and when to seek medical evaluation.",
     "sentAt": "2025-03-20T13:20:00.000Z",
-    "isFromPatient": false,
-    "consultationId": "c14"
+    "isFromPatient": false
   },
   {
-    "id": "m29",
+    "id": "m14c14-3",
+    "consultationId": "c14",
+    "content": "Thank you. The stiffness usually lasts about 30-45 minutes after waking up. I've also noticed some swelling in my knuckles, and the joints are sometimes warm to the touch. I'm 53 years old if that's relevant.",
+    "sentAt": "2025-03-20T14:10:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m14c14-4",
+    "consultationId": "c14",
+    "content": "These additional details are very helpful. Morning stiffness lasting 30-45 minutes, along with swelling and warmth in the joints, could potentially indicate an inflammatory arthritis condition. Your age is relevant as some forms of arthritis become more common in middle age. During our video call, I'd like to see which joints are affected and discuss your medical history in more detail. It would be helpful if you could note any other symptoms you're experiencing and whether anyone in your family has arthritis or autoimmune conditions. This information will help us have a more productive discussion about next steps and when to consult with a rheumatologist.",
+    "sentAt": "2025-03-20T15:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m15c15-1",
+    "consultationId": "c15",
     "content": "I'm taking amoxicillin for a sinus infection. Are there any foods I should avoid? Also, does it interact with birth control?",
     "sentAt": "2025-03-18T14:10:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c15"
+    "isFromPatient": true
   },
   {
-    "id": "m30",
+    "id": "m15c15-2",
+    "consultationId": "c15",
+    "content": "Great questions about your amoxicillin prescription! Regarding food interactions, amoxicillin can be taken with or without food, which makes it quite flexible. While some antibiotics are affected by dairy products, amoxicillin isn't significantly impacted - you can take it with milk or other dairy if you prefer. As for birth control, amoxicillin specifically has been the subject of some debate, but current evidence suggests it does not significantly reduce hormonal birth control effectiveness like some other antibiotics might. However, as a precaution, using a backup method during your antibiotic course and for 7 days after completing it is sometimes recommended. Are you experiencing any side effects from the amoxicillin so far?",
+    "sentAt": "2025-03-18T14:45:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m15c15-3",
+    "consultationId": "c15",
+    "content": "Thank you for the information. I've had some mild nausea after taking it, but nothing severe. How long should I expect to take this medication, and what should I do if my symptoms don't improve?",
+    "sentAt": "2025-03-18T15:20:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m15c15-4",
+    "consultationId": "c15",
+    "content": "The mild nausea is a common side effect of amoxicillin - taking it with a light snack might help reduce this. For sinus infections, amoxicillin is typically prescribed for 7-10 days, but it's important to complete the entire course even if you start feeling better sooner. Regarding symptom improvement, you should notice gradual improvement within 3-5 days. If your symptoms worsen or don't show any improvement after 3 days, or if you develop new symptoms like rash, severe diarrhea, or difficulty breathing, you should contact your healthcare provider promptly. These could indicate either that the antibiotic isn't effective against the specific bacteria causing your infection, or rarely, an allergic reaction.",
+    "sentAt": "2025-03-18T16:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m16c16-1",
+    "consultationId": "c16",
     "content": "I've been struggling with insomnia lately. I fall asleep fine but wake up around 3 AM and can't get back to sleep. Any non-medication strategies?",
     "sentAt": "2025-03-19T20:05:00.000Z",
-    "isFromPatient": true,
-    "consultationId": "c16"
+    "isFromPatient": true
+  },
+  {
+    "id": "m16c16-2",
+    "consultationId": "c16",
+    "content": "I'm sorry to hear you're experiencing sleep maintenance insomnia (difficulty staying asleep). This pattern is quite common and can be addressed with several non-medication approaches. First, let's understand a bit more about your situation. How long have you been experiencing this pattern? Have you noticed any triggers for the nighttime awakenings, such as noise, temperature changes, need to use the bathroom, or stress?",
+    "sentAt": "2025-03-19T20:40:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m16c16-3",
+    "consultationId": "c16",
+    "content": "It's been happening for about a month, coinciding with a busy period at work. I do notice I often need to use the bathroom when I wake up, but even after returning to bed, my mind starts racing with work thoughts and I can't fall back asleep. I usually have a glass of wine in the evening to unwind, and I check emails before bed.",
+    "sentAt": "2025-03-19T21:15:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m16c16-4",
+    "consultationId": "c16",
+    "content": "Thank you for sharing those details. Based on your description, I can suggest several evidence-based strategies that might help:\n\n1. Evening routine adjustments: While alcohol may help you fall asleep initially, it often disrupts sleep in the second half of the night. Consider reducing alcohol consumption, especially within 3 hours of bedtime. Similarly, the blue light from screens when checking email can suppress melatonin production - try implementing a digital sunset 1-2 hours before bed.\n\n2. Limit fluid intake in the evening to reduce nighttime bathroom trips, but stay well-hydrated during the day.\n\n3. For the racing thoughts: Keep a notepad by your bed to write down work concerns when they arise, symbolically setting them aside until morning. Progressive muscle relaxation or guided meditation can also help quiet an active mind (I can recommend specific apps during our consultation).\n\n4. If you do wake up, avoid checking the time as this can increase anxiety about sleep loss. If you can't fall back asleep within 20 minutes, get up and do a quiet, non-stimulating activity like reading (not on a screen) under dim light until you feel sleepy again.\n\n5. Maintain a consistent wake-up time, even on weekends, to regulate your body's sleep-wake cycle.\n\nWould you like more details on any of these approaches? We can discuss customizing them to your specific situation during our consultation.",
+    "sentAt": "2025-03-19T22:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m17c17-1",
+    "consultationId": "c17",
+    "content": "I need advice about over-the-counter pain relievers. I get confused about the differences between ibuprofen, acetaminophen, and aspirin. Which is best for headaches versus muscle pain?",
+    "sentAt": "2025-03-15T09:50:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m17c17-2",
+    "consultationId": "c17",
+    "content": "That's a great question about OTC pain relievers! Each works differently and has different strengths. Acetaminophen (Tylenol) works primarily in the brain to reduce pain perception and fever, but doesn't reduce inflammation. It's generally good for headaches and fever. Ibuprofen (Advil, Motrin) and other NSAIDs reduce inflammation and pain by inhibiting certain enzymes, making them effective for muscle pain, arthritis, and inflammatory conditions. Aspirin is similar to NSAIDs but has additional blood-thinning properties. For simple tension headaches, acetaminophen often works well. For migraines, cluster headaches, or those with inflammatory components, ibuprofen might be more effective. For muscle pain, sprains, or arthritis, ibuprofen or other NSAIDs typically work better due to their anti-inflammatory effects. Do you have any specific health conditions that might influence which is safest for you?",
+    "sentAt": "2025-03-15T10:30:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m17c17-3",
+    "consultationId": "c17",
+    "content": "I have mild high blood pressure that I'm managing with diet and exercise. I occasionally get stomach upset. Would these conditions affect which pain reliever I should use?",
+    "sentAt": "2025-03-15T11:15:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m17c17-4",
+    "consultationId": "c17",
+    "content": "Yes, those conditions are definitely relevant to your choice of pain reliever. With high blood pressure, you should be cautious with NSAIDs like ibuprofen, as they can increase blood pressure in some people and may reduce the effectiveness of some blood pressure medications. Additionally, if you're prone to stomach upset, NSAIDs and aspirin can irritate the stomach lining and potentially cause ulcers with regular use.\n\nIn your case, acetaminophen (Tylenol) might be the safest option for occasional pain relief, as it doesn't affect blood pressure or irritate the stomach. However, it's important to stay within the recommended dosage limits (no more than 3,000mg per day for adults) and avoid alcohol when taking it to protect your liver.\n\nIf you do need to use an NSAID for inflammation, taking it with food can help reduce stomach irritation, and shorter courses are safer than long-term use. During our audio consultation, we can discuss more personalized recommendations based on your specific pain patterns and medical history.",
+    "sentAt": "2025-03-15T12:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m18c18-1",
+    "consultationId": "c18",
+    "content": "I've been experiencing bloating and discomfort after meals and want to discuss possible causes.",
+    "sentAt": "2025-03-22T12:20:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m18c18-2",
+    "consultationId": "c18",
+    "content": "I'd be happy to discuss your digestive symptoms. To better understand your situation, could you share more details about when the bloating started, any specific foods that seem to trigger it, and any other symptoms you might be experiencing alongside the bloating and discomfort?",
+    "sentAt": "2025-03-22T13:00:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m18c18-3",
+    "consultationId": "c18",
+    "content": "The bloating started about 2 months ago. It seems worse after eating dairy products and wheat-based foods like bread and pasta. I also sometimes get diarrhea after these foods. The bloating is usually worst in the evening and makes my abdomen visibly distended.",
+    "sentAt": "2025-03-22T13:45:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m18c18-4",
+    "consultationId": "c18",
+    "content": "Thank you for sharing those details. The pattern you're describing - bloating and diarrhea triggered by dairy and wheat products - could potentially indicate food intolerances like lactose intolerance or non-celiac gluten sensitivity. Lactose intolerance is quite common and results from insufficient lactase enzyme to digest milk sugar. Gluten sensitivity can cause similar symptoms in people who don't have celiac disease but still react to gluten proteins. \n\nOther possibilities include irritable bowel syndrome (IBS), which often worsens throughout the day, or small intestinal bacterial overgrowth (SIBO). \n\nTo help narrow down the cause, you might consider keeping a detailed food and symptom diary for 2 weeks before our consultation. Note everything you eat and drink, when symptoms occur, and their severity. You could also try temporarily eliminating dairy for 1-2 weeks to see if symptoms improve, then do the same with wheat products. \n\nDuring our consultation, we can review your symptom patterns in detail and discuss when diagnostic testing might be appropriate. Would you like some guidance on how to structure a food and symptom diary?",
+    "sentAt": "2025-03-22T14:30:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m19c19-1",
+    "consultationId": "c19",
+    "content": "I had an abdominal ultrasound but don't understand all the terminology in the report.",
+    "sentAt": "2025-03-21T15:35:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m19c19-2",
+    "consultationId": "c19",
+    "content": "I'd be happy to help you understand your ultrasound report. Could you share some of the specific terms or findings you're uncertain about? This will help me provide the most relevant explanations during our consultation.",
+    "sentAt": "2025-03-21T16:10:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m19c19-3",
+    "consultationId": "c19",
+    "content": "The report mentions \"mild hepatomegaly\" and \"gallbladder polyp measuring 6mm.\" It also says something about \"mild fatty infiltration of the liver\" - I'm not sure what any of these mean or if I should be concerned.",
+    "sentAt": "2025-03-21T16:45:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m19c19-4",
+    "consultationId": "c19",
+    "content": "Thank you for sharing those terms. I understand why they might be concerning when you're not familiar with the medical terminology. Let me briefly explain each:\n\n\"Mild hepatomegaly\" means your liver is slightly enlarged compared to what's considered the normal size range.\n\n\"Gallbladder polyp measuring 6mm\" refers to a small growth on the inner lining of your gallbladder. At 6mm, this is considered small.\n\n\"Mild fatty infiltration of the liver\" (also called fatty liver or hepatic steatosis) means there's a small amount of fat accumulated in your liver cells.\n\nThese findings are relatively common and often don't require immediate intervention, but their significance depends on your medical history and risk factors. During our video consultation, I can explain these findings in more detail, including potential causes and what follow-up might be recommended. It would be helpful if you could share any symptoms you've been experiencing and relevant medical history during our call.",
+    "sentAt": "2025-03-21T17:30:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m20c20-1",
+    "consultationId": "c20",
+    "content": "I want to discuss what preventative screenings are recommended for someone my age.",
+    "sentAt": "2025-03-20T16:45:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m20c20-2",
+    "consultationId": "c20",
+    "content": "That's a great proactive question about preventative health screenings! Recommendations vary based on age, sex, family history, and risk factors. To provide the most relevant information, could you share your age and sex, and whether you have any significant family history of conditions like cancer, heart disease, or diabetes?",
+    "sentAt": "2025-03-20T17:20:00.000Z",
+    "isFromPatient": false
+  },
+  {
+    "id": "m20c20-3",
+    "consultationId": "c20",
+    "content": "I'm a 40-year-old woman. My mother had breast cancer at age 52, and my father has type 2 diabetes and high blood pressure. I'm generally healthy with slightly elevated cholesterol.",
+    "sentAt": "2025-03-20T18:00:00.000Z",
+    "isFromPatient": true
+  },
+  {
+    "id": "m20c20-4",
+    "consultationId": "c20",
+    "content": "Thank you for sharing that information. Based on your age, sex, and family history, here are the key preventative screenings to consider:\n\n1. Cardiovascular health: Continue monitoring your cholesterol levels (complete lipid panel) annually given your elevated levels and family history of hypertension. Blood pressure checks at least annually, and consider a baseline ECG if not done recently.\n\n2. Cancer screenings: With your family history of breast cancer, you should discuss with your doctor whether to start mammograms now at 40 (which is generally recommended) or if earlier or additional screenings are warranted. Cervical cancer screening with Pap tests every 3 years, or Pap plus HPV co-testing every 5 years.\n\n3. Diabetes screening: Given your father's history, a fasting blood glucose or HbA1c test every 1-3 years is recommended.\n\n4. Colorectal cancer screening: This typically begins at age 45 for average-risk individuals, but discuss with your provider if earlier screening is appropriate.\n\n5. General screening: Comprehensive physical exam, including thyroid assessment, skin cancer check, and vision/hearing tests.\n\nDuring our audio consultation, we can discuss these in more detail and create a personalized screening timeline based on your specific risk factors and preferences. Would you like information about any specific screening tests?",
+    "sentAt": "2025-03-20T18:45:00.000Z",
+    "isFromPatient": false
   }
 ]
